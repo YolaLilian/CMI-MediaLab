@@ -10,4 +10,6 @@ For getting this page to work in development mode:
   
 * To edit the css, edit the file in /_sass called `main.scss`.
 
+You can read more about Bulma [over here](https://bulma.io/documentation/).
+
 Happy developing!
