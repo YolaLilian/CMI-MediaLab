@@ -7132,3 +7132,12 @@ label.panel-block {
 .footer {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
+
+.content_wrapper {
+  padding-bottom: 20px;
+  width: 400px; }
+
+.concepts__wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px; }

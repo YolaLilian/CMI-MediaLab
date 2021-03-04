@@ -1,5 +1,10 @@
 Setting up an onepager for the CMILab 2020-2021 project EMI op Zuid. 
 
+## Purpose of this onepager
+"Jullie ontwikkelen vanaf de start een one pager. In eerste instantie vul je die met informatie over het team.
+Het wordt uiteindelijk een professionele oplever-pagina voor de opdrachtgever en belangstellenden met
+daarop alle deelproducten, eindproducten en documenten, in te zien en ter overdracht."
+
 ### Important!
 
 For getting this page to work in development mode:

@@ -28,8 +28,18 @@ $primary-invert: $pink-invert;
 
 @import "../node_modules/bulma/bulma";
 
-// html {
+.content_wrapper {
 
-// 	// background-color: $green;
+	padding-bottom: 20px;
+	width: 400px;
 
-// }
+}
+
+.concepts__wrapper {
+
+	display: flex;
+	justify-content: space-evenly;
+	gap: 30px;
+	// flex-wrap: wrap;
+
+}
