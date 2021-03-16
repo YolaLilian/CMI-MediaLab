@@ -1,30 +1,34 @@
 @charset "utf-8";
 
-// Customization
-
-// You can easily customize Bulma with your own variables.
-// Just uncomment the following block to see the result.
-
-/*
 // 1. Import the initial variables
+
 @import "../node_modules/bulma/sass/utilities/initial-variables";
 
+@import url("https://use.typekit.net/kxp6fiw.css");
+
 // 2. Set your own initial variables
-// Update the blue shade, used for links
-$blue: #06bcef;
-// Add pink and its invert
-$pink: #ff8080;
-$pink-invert: #fff;
+
+$orange: 				#f29022;
+$orange-invert: 		#ffffff;
+
+$purple:				#754f9b;
+$purple-invert:			#ffffff;
+
+$blue:					#243885;
+$blue-invert:			#ffffff;
+
+
 // Update the sans-serif font family
-$family-sans-serif: "Helvetica", "Arial", sans-serif;
+
+$family-primary: 'Montserrat', sans-serif;
+$family-secondary: 'Bely-display', sans-serif;
 
 // 3. Set the derived variables
-// Use the new pink as the primary color
-$primary: $pink;
-$primary-invert: $pink-invert;
+
+$primary: $orange;
+$primary-invert: $orange-invert;
 
 // 4. Import the rest of Bulma
-*/
 
 @import "../node_modules/bulma/bulma";
 
@@ -41,5 +45,110 @@ $primary-invert: $pink-invert;
 	justify-content: space-evenly;
 	gap: 30px;
 	// flex-wrap: wrap;
+
+}
+
+.navbar { 
+
+	position: sticky;
+
+	height: 70px;
+
+	@media( min-width: 768px) {
+
+		height: 130px;
+	
+	}
+
+	&-brand {
+
+		// z-index: 99;
+
+		height: 100%;
+		display: flex;
+		align-items: center;
+
+	}
+
+	&-item {
+
+		img {
+
+			min-height: 40px;
+
+			@media (min-width: 768px) {
+
+				margin-left: 20px;
+				min-height: 80px;
+
+			}
+
+		}
+
+	}
+
+	&-burger {
+			
+		margin-right: 10px;
+
+		color: $blue;
+
+		@media (min-width: 768px) {
+
+			margin-right: 20px;
+
+		}
+
+	}
+
+	&-menu {
+
+		display: block;
+
+		transform: translateX(200%);
+		transition: transform 0.8s ease-in-out;
+
+		@media (min-width: 1024px) { 
+
+			transform: translateX(0);
+			display: flex;
+			align-items: center;
+
+		}
+
+
+		&.is-active {
+
+			transform: translateX(0);
+
+		}
+
+	}
+
+	&-start {
+
+		// display: block;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@media (min-width: 1024px) {
+			
+			flex-direction: row;
+
+		}
+
+		a {
+
+			color: $blue;
+
+			padding-left: 15px;
+			padding-top: 10px;
+			padding-right: 15px;
+			padding-bottom: 10px;
+
+		}
+
+	}
 
 }
