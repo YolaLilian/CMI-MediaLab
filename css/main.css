@@ -7244,11 +7244,11 @@ html {
     .team__people .person .linkedin_url {
       margin-top: 20px; }
   .team__people #roos .title {
-    max-width: 65px; }
+    width: auto; }
   .team__people #lennart .title {
-    max-width: 100px; }
+    width: auto; }
   .team__people #romy .title, .team__people #lilian .title {
-    max-width: 75px; }
+    width: auto; }
   .team__people .linkedin_url {
     width: 50px; }
 
