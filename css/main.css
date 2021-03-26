@@ -7114,21 +7114,34 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
-.content_wrapper {
-  padding-bottom: 20px;
-  width: 400px; }
+html {
+  scroll-behavior: smooth; }
 
-.concepts__wrapper {
+#team, #assignment, #process, #concept {
+  scroll-margin-top: 30px; }
+
+.title {
+  background-image: linear-gradient(45deg, #f29022, #754f9b, #243885);
+  background-size: 100%;
+  width: 150px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent; }
+
+.title__wrapper {
   display: flex;
-  justify-content: space-evenly;
-  gap: 30px; }
+  justify-content: center;
+  margin-top: 70px;
+  margin-bottom: 70px; }
 
 .navbar {
   position: sticky;
   height: 70px; }
   @media (min-width: 768px) {
     .navbar {
-      height: 130px; } }
+      height: 110px; } }
   .navbar-brand {
     height: 100%;
     display: flex;
@@ -7138,10 +7151,9 @@ label.panel-block {
     @media (min-width: 768px) {
       .navbar-item img {
         margin-left: 20px;
-        min-height: 80px; } }
+        min-height: 70px; } }
   .navbar-burger {
-    margin-right: 10px;
-    color: #243885; }
+    margin-right: 10px; }
     @media (min-width: 768px) {
       .navbar-burger {
         margin-right: 20px; } }
@@ -7164,8 +7176,169 @@ label.panel-block {
       .navbar-start {
         flex-direction: row; } }
     .navbar-start a {
-      color: #243885;
-      padding-left: 15px;
+      padding-left: 20px;
       padding-top: 10px;
-      padding-right: 15px;
+      padding-right: 20px;
       padding-bottom: 10px; }
+
+.hero {
+  margin-top: 50px;
+  background-image: linear-gradient(60deg, #f29022, #754f9b, #243885);
+  background-size: 100%; }
+  .hero .title {
+    width: auto;
+    color: #ffffff;
+    font-size: 4rem;
+    background-image: none;
+    -moz-text-fill-color: currentcolor;
+    -webkit-text-fill-color: currentcolor; }
+  .hero .subtitle {
+    color: #ffffff;
+    font-size: 1.5rem; }
+  .hero .column {
+    max-width: 600px; }
+    @media (min-width: 768px) {
+      .hero .column {
+        margin-left: 60px; } }
+
+.section__team {
+  margin-top: 50px; }
+  .section__team .team__people {
+    margin-bottom: 50px; }
+  .section__team .title__wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    margin-bottom: 70px; }
+  .section__team .title {
+    width: 215px;
+    font-size: 3rem; }
+
+.team__people {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  @media (min-width: 768px) {
+    .team__people {
+      flex-direction: row; } }
+  .team__people .person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px; }
+    .team__people .person .title {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-size: 25px; }
+    @media (min-width: 768px) {
+      .team__people .person .avatar {
+        height: 370px;
+        object-fit: cover;
+        width: 400px;
+        margin-right: 15px;
+        margin-left: 15px;
+        border-radius: 10px; } }
+    .team__people .person .about {
+      text-align: center;
+      max-width: 300px; }
+    .team__people .person .linkedin_url {
+      margin-top: 20px; }
+  .team__people #roos .title {
+    max-width: 65px; }
+  .team__people #lennart .title {
+    max-width: 100px; }
+  .team__people #romy .title, .team__people #lilian .title {
+    max-width: 75px; }
+  .team__people .linkedin_url {
+    width: 50px; }
+
+.team__crinpo .crinpo__traits, .team__crinpo .crinpo__summary {
+  display: flex;
+  justify-content: center; }
+
+.team__crinpo .crinpo__summary {
+  margin-top: 75px;
+  margin-bottom: 75px;
+  text-align: center; }
+  .team__crinpo .crinpo__summary--content {
+    max-width: 700px;
+    font-size: 2rem;
+    margin-bottom: 50px; }
+
+.team__crinpo .crinpo__traits {
+  display: flex;
+  justify-content: center; }
+
+.team__crinpo .crinpo__trait {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 75px;
+  font-size: 1rem;
+  max-width: 400px; }
+  .team__crinpo .crinpo__trait .crinpo__subtitle {
+    font-size: 1.6rem; }
+  .team__crinpo .crinpo__trait #creative {
+    color: #f29022; }
+  .team__crinpo .crinpo__trait #innovative {
+    color: #754f9b; }
+  .team__crinpo .crinpo__trait #positive {
+    color: #243885; }
+
+.team__crinpo .crinpo__img {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
+
+.section__assignment .title {
+  width: 295px;
+  font-size: 3rem; }
+
+.section__assignment .assignment__wrapper {
+  display: flex;
+  justify-content: center; }
+
+.section__assignment .assignment__content {
+  max-width: 700px;
+  font-size: 2rem;
+  margin-bottom: 70px;
+  text-align: center; }
+
+.section__assignment .client__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.section__assignment .title__client {
+  font-size: 2rem;
+  width: 280px;
+  margin-bottom: 40px;
+  margin-top: 0; }
+
+.section__assignment .client__content {
+  width: 700px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center; }
+  .section__assignment .client__content span {
+    font-weight: 700; }
+
+.section__assignment .client__summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .section__assignment .client__summary span {
+    font-weight: 700; }
+
+.section__assignment .stakeholders {
+  display: flex;
+  width: 900px;
+  justify-content: space-between; }
+
+.section__process .title {
+  width: 255px;
+  font-size: 3rem; }
+
+.section__concept .title {
+  width: 285px;
+  font-size: 3rem; }

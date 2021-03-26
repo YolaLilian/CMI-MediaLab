@@ -32,19 +32,42 @@ $primary-invert: $orange-invert;
 
 @import "../node_modules/bulma/bulma";
 
-.content_wrapper {
+html{
 
-	padding-bottom: 20px;
-	width: 400px;
+	scroll-behavior: smooth;
 
 }
 
-.concepts__wrapper {
+#team, #assignment, #process, #concept {
+
+	scroll-margin-top: 30px;
+
+}
+
+.title {
+
+	background-image: linear-gradient(45deg, $orange, $purple, $blue);
+	background-size: 100%;
+
+	width: 150px;
+
+	background-clip: text;
+
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+
+}
+
+.title__wrapper {
 
 	display: flex;
-	justify-content: space-evenly;
-	gap: 30px;
-	// flex-wrap: wrap;
+	justify-content: center;
+
+	margin-top: 70px;
+	margin-bottom: 70px;
 
 }
 
@@ -56,13 +79,11 @@ $primary-invert: $orange-invert;
 
 	@media( min-width: 768px) {
 
-		height: 130px;
+		height: 110px;
 	
 	}
 
 	&-brand {
-
-		// z-index: 99;
 
 		height: 100%;
 		display: flex;
@@ -79,7 +100,7 @@ $primary-invert: $orange-invert;
 			@media (min-width: 768px) {
 
 				margin-left: 20px;
-				min-height: 80px;
+				min-height: 70px;
 
 			}
 
@@ -91,7 +112,7 @@ $primary-invert: $orange-invert;
 			
 		margin-right: 10px;
 
-		color: $blue;
+		// color: $blue;
 
 		@media (min-width: 768px) {
 
@@ -140,15 +161,361 @@ $primary-invert: $orange-invert;
 
 		a {
 
-			color: $blue;
+			// color: $blue;
 
-			padding-left: 15px;
+			padding-left: 20px;
 			padding-top: 10px;
-			padding-right: 15px;
+			padding-right: 20px;
 			padding-bottom: 10px;
 
 		}
 
+	}
+
+}
+
+.hero {
+
+	margin-top: 50px;
+	background-image: linear-gradient(60deg, $orange, $purple, $blue);
+	background-size: 100%;
+
+	.title { 
+		
+		width: auto;
+		color: $orange-invert;
+		font-size: 4rem;
+		background-image: none;
+		-moz-text-fill-color: currentcolor;
+		-webkit-text-fill-color: currentcolor;
+	
+	}
+
+	.subtitle {
+		
+		color: $orange-invert;
+		font-size: 1.5rem;
+		
+	}
+	
+	.column {
+
+		max-width: 600px;
+		
+		@media (min-width: 768px) {
+		
+			margin-left: 60px;
+
+		}
+
+	}
+
+}
+
+.section__team {
+
+	margin-top: 50px;
+	// margin-bottom: 75px;
+
+	.team__people {
+
+		margin-bottom: 50px;
+
+	}
+
+	.title__wrapper {
+
+		display: flex;
+		justify-content: center;
+
+		margin-top: 70px;
+		margin-bottom: 70px;
+
+	}
+
+	.title {
+
+		width: 215px;
+		font-size: 3rem;
+
+	}
+
+}
+
+.team__people {
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+
+	@media (min-width: 768px) {
+
+		flex-direction: row;
+
+	}
+
+	.person {
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 30px;
+
+		.title {
+
+			margin-top: 30px;
+			margin-bottom: 10px;
+			font-size: 25px;
+
+		}
+
+		.avatar {
+
+			@media (min-width: 768px) {
+
+				height: 370px;
+				object-fit: cover;
+				width: 400px;
+				margin-right: 15px;
+				margin-left: 15px;
+				border-radius: 10px;
+
+			}
+
+		}
+
+		.about {
+
+			text-align: center;
+			max-width: 300px;
+
+		}
+
+		.linkedin_url {
+
+			margin-top: 20px;
+
+		}
+		
+	}
+
+	#roos {
+
+		.title {
+
+			max-width: 65px;
+
+		}
+
+	}
+
+	#lennart {
+
+		.title {
+
+			max-width: 100px;
+			
+		}
+
+	}
+
+	#romy, #lilian {
+
+		.title {
+
+			max-width: 75px;
+			
+		}
+
+	}
+
+	.linkedin_url {
+
+		width: 50px;
+		
+	}
+
+}
+
+.team__crinpo { 
+	
+	// display: flex;
+	// flex-direction: column;
+	// align-items: center;
+
+	.crinpo__traits, .crinpo__summary {
+
+		display: flex;
+		justify-content: center;
+
+	}
+
+	.crinpo__summary {
+
+		margin-top: 75px;
+		margin-bottom: 75px;
+		text-align: center;
+		
+		&--content {
+			
+			max-width: 700px;
+			font-size: 2rem;
+
+			margin-bottom: 50px;
+			
+		}
+
+	}
+
+	.crinpo__traits {
+
+		display: flex;
+		justify-content: center;
+
+	}
+
+	.crinpo__trait {
+
+		margin-left: 50px;
+		margin-right: 50px;
+		margin-bottom: 75px;
+		font-size: 1rem;
+		max-width: 400px;
+
+		.crinpo__subtitle {
+
+			font-size: 1.6rem;
+
+		}
+
+		#creative {
+
+			color: $orange;
+
+		}
+
+		#innovative {
+
+			color: $purple;
+
+		}
+
+		#positive {
+
+			color: $blue;
+		}
+
+	}
+
+	.crinpo__img {
+
+		max-width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+
+	}
+
+}
+
+.section__assignment {
+
+	.title {		
+
+		width: 295px;
+		font-size: 3rem;
+
+	}
+
+	.assignment__wrapper {
+
+		display: flex;
+		justify-content: center;
+
+	}
+
+	.assignment__content {
+
+		max-width: 700px;
+		font-size: 2rem;
+		margin-bottom: 70px;
+		text-align: center;
+
+	}
+
+	.client__wrapper {
+
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+	}
+
+	.title__client {
+
+		font-size: 2rem;
+		width: 280px;
+		margin-bottom: 40px;
+		margin-top:0;
+
+	}
+
+	.client__content {
+
+		width: 700px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		text-align: center;
+
+		span {
+
+			font-weight: 700;
+
+		}
+
+	}
+
+	.client__summary {
+
+		// width: 500px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		span {
+
+			font-weight: 700;
+			
+		}
+
+	}
+
+	.stakeholders {
+
+		display: flex;
+		width: 900px;
+		justify-content: space-between;
+	}
+
+}
+.section__process {
+
+	.title {
+
+		width: 255px;
+		font-size: 3rem;
+
+	}
+
+}
+.section__concept {
+
+	.title {
+
+		width: 285px;
+		font-size: 3rem;
+		
 	}
 
 }
