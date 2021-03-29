@@ -7131,8 +7131,6 @@ html {
   justify-content: center;
   margin-top: 70px;
   margin-bottom: 70px; }
-  .title__wrapper--concept {
-    margin-bottom: 0px; }
 
 .navbar {
   position: sticky;
@@ -7226,7 +7224,7 @@ html {
     margin-bottom: 30px; }
     .team__people .person .title {
       margin-top: 30px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       font-size: 25px; }
     .team__people .person .avatar {
       border-radius: 10px; }
@@ -7241,7 +7239,8 @@ html {
       text-align: center;
       max-width: 350px; }
     .team__people .person .linkedin_url {
-      margin-top: 20px; }
+      margin-top: auto;
+      padding-top: 20px; }
   .team__people .linkedin_url {
     width: 50px; }
 
@@ -7341,6 +7340,11 @@ html {
   margin-right: auto; }
   .section__research span {
     font-weight: 700; }
+  .section__research hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #243885;
+    height: 1px; }
   .section__research .title {
     font-size: 3rem;
     margin-top: 70px; }
@@ -7409,6 +7413,34 @@ html {
 
 .section__process .title {
   font-size: 3rem; }
+
+.section__process .process__container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.section__process .level {
+  align-items: center;
+  justify-content: space-between;
+  display: flex; }
+  .section__process .level--multi {
+    flex-direction: column; }
+
+.section__process .level-item {
+  align-items: center;
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center; }
+  .section__process .level-item a {
+    text-decoration: underline; }
+  .section__process .level-item.arrows--rotated img {
+    transform: scaleX(-1); }
+  .section__process .level-item img {
+    height: 80px;
+    margin-left: 10px;
+    margin-right: 10px; }
 
 .section__concept {
   display: flex;
