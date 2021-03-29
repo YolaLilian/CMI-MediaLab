@@ -61,6 +61,12 @@ html{
 	margin-top: 70px;
 	margin-bottom: 70px;
 
+	&--concept {
+
+		margin-bottom: 0px;
+
+	}
+
 }
 
 .navbar { 
@@ -583,6 +589,67 @@ html{
 		padding-top: 10px;
 	}
 
+	.deskresearch {
+	
+		&__summary {
+
+			display: flex;
+			justify-content: space-between;
+			margin-top: 10px;
+
+
+			img {
+
+				width: 300px;
+
+				margin-top: 10px;
+
+			}
+
+			.title {
+
+				margin-top: 0px;
+
+			}
+
+		}
+
+		&--average, &--restaurants, &--current-apps {
+
+			flex: 1 1 0px;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+
+		}
+
+		&--average {
+
+			.title {
+
+				font-size: 2rem;
+
+			}
+
+		}
+		
+		&--current-apps {
+
+
+			.title {
+
+				height: 50px;
+				font-size: 1.7rem;
+
+			}
+
+		}
+
+	}
+
 }
 
 .section__process {
@@ -603,12 +670,38 @@ html{
 	padding-left: 0;
 	padding-right: 0;
 
-	
+	padding-bottom: 0px;
+
+	span {
+
+		font-weight: 700;
+
+	}
 
 	.title {
 
 		font-size: 3rem;
+
+		&--orange {
+
+			color: $orange;
+			font-size: 1.5rem;
 		
+		}
+
+		&--purple {
+
+			color: $purple;
+			font-size: 1.5rem;
+
+		}
+		
+		&--blue {
+
+			color: $blue;
+			font-size: 1.5rem;
+
+		}
 	}
 
 	.concept__content {
@@ -616,11 +709,28 @@ html{
 		max-width: 1100px;
 		margin-left: auto;
 		margin-right: auto;
+		margin-top: 15px;
+		margin-bottom: 15px;
+
+		&--last {
+
+			margin-bottom: 60px;
+
+		}
+
+	}
+
+	.concept__images {
+
+		margin-top: 20px;
 
 	}
 
 }
 
-.footer-column {
+.footer {
+
+	background-color: $orange;
+	color: $orange-invert;
 
 }
