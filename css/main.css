@@ -7379,10 +7379,12 @@ html {
     justify-content: space-between; }
     .section__research .creative_session__image-thumbnail {
       margin-top: 20px; }
-    .section__research .creative_session .image_container img {
-      height: 150px;
-      object-fit: cover;
-      width: 200px; }
+    .section__research .creative_session .image_container {
+      cursor: pointer; }
+      .section__research .creative_session .image_container img {
+        height: 150px;
+        object-fit: cover;
+        width: 200px; }
   .section__research .modal-subtext {
     color: #ffffff;
     display: flex;
