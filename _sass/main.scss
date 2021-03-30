@@ -657,6 +657,24 @@ html{
 
 	}
 
+	.quotes {
+
+		&__columns {
+
+			margin-top: 20px;
+
+		}
+
+		&__column {
+
+			text-align: center;
+			margin-right: 10px;
+			margin-left: 10px;
+
+		}
+
+	}
+
 }
 
 .section__process {

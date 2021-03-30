@@ -7412,6 +7412,12 @@ html {
   .section__research .deskresearch--current-apps .title {
     height: 50px;
     font-size: 1.7rem; }
+  .section__research .quotes__columns {
+    margin-top: 20px; }
+  .section__research .quotes__column {
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 10px; }
 
 .section__process .title {
   font-size: 3rem; }
