@@ -389,7 +389,6 @@ html{
 	align-items: center;
 
 	.title {		
-
 		
 		font-size: 3rem;
 		color: $orange-invert;
@@ -489,16 +488,6 @@ html{
 
 	}
 
-	hr {
-
-		margin-top: 10px;
-		margin-bottom: 10px;
-
-		background-color: $blue;
-		height: 1px;
-
-	}
-
 	.title {
 
 		font-size: 3rem;
@@ -527,7 +516,8 @@ html{
 		&--table {
 
 			display: flex;
-			margin-bottom: 50px;
+			margin-bottom: 70px;
+			margin-top: 70px;
 
 		}
 
@@ -679,9 +669,18 @@ html{
 
 .section__process {
 
+	background-color: $blue;
+	color: $blue-invert;
+	padding-bottom: 70px;
+
 	.title {
 
 		font-size: 3rem;
+		color: $blue-invert;
+		background-image: none;
+		-moz-text-fill-color: currentcolor;
+		-webkit-text-fill-color: currentcolor;
+		letter-spacing: 1px;
 		
 	}
 
@@ -719,6 +718,7 @@ html{
 		a {
 
 			text-decoration: underline;
+			color: $blue-invert;
 		}
 
 		&.arrows--rotated {
