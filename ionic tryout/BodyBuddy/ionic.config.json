@@ -1,0 +1,7 @@
+{
+  "name": "BodyBuddy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
