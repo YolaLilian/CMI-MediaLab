@@ -7,13 +7,13 @@ const Workouts: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Sporten</IonTitle>
+          <IonTitle class="header__title">Sporten</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Sporten</IonTitle>
+            <IonTitle size="large" class="title">Sporten</IonTitle>
           </IonToolbar>
         </IonHeader>
         <ExploreContainer name="Workouts page" />

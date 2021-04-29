@@ -16,7 +16,7 @@ const Recipes: React.FC = () => {
             <IonTitle size="large" class="title">Recepten</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+        <ExploreContainer name="Recepten" />
       </IonContent>
     </IonPage>
   );
