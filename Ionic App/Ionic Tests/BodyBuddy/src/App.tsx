@@ -57,22 +57,18 @@ const App: React.FC = () => (
             <Redirect to="/recipes" />
           </Route>
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
+        <IonTabBar color="primary" slot="bottom">
           <IonTabButton tab="recipes" href="/recipes">
             <IonIcon icon={fish} />
-            <IonLabel>Recepten</IonLabel>
           </IonTabButton>
           <IonTabButton tab="workouts" href="/Workouts">
           <IonIcon icon={basketball} />
-            <IonLabel>Sporten</IonLabel>
           </IonTabButton>
           <IonTabButton tab="user" href="/User">
             <IonIcon icon={person} />
-            <IonLabel>Gebruiker</IonLabel>
           </IonTabButton>
           <IonTabButton tab="buddy" href="/Buddy">
             <IonIcon icon={heart} />
-            <IonLabel>Find a Buddy</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
