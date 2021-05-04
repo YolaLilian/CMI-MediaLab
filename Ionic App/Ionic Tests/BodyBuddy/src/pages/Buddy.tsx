@@ -6,7 +6,7 @@ const Buddy: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar color="quinary">
           <IonTitle class="header__title">Find a buddy</IonTitle>
         </IonToolbar>
       </IonHeader>

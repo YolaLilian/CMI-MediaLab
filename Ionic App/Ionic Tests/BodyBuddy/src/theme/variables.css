@@ -34,6 +34,11 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-quaternary-contrast-rgb: 255, 255, 255;
   --ion-color-quaternary-shade: #f9be62;
   --ion-color-quaternary-tint: #fdd596;
+
+  /** quinary **/
+  --ion-color-quinary: #f9efe4;
+  --ion-color-quinary-rgb: 247, 199, 124;
+  --ion-color-quinary-contrast: #000000;
   
   /** success **/
   --ion-color-success: #2dd36f;
@@ -85,6 +90,21 @@ http://ionicframework.com/docs/theming/ */
 
 }
 
+
+.ion-color-quaternary {
+  --ion-color-base: var(--ion-color-quaternary);
+  --ion-color-base-rgb: var(--ion-color-quaternary-rgb);
+  --ion-color-contrast: var(--ion-color-quaternary-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-quaternary-contrast-rgb);
+  --ion-color-shade: var(--ion-color-quaternary-shade);
+  --ion-color-tint: var(--ion-color-quaternary-tint);
+}
+
+.ion-color-quinary {
+  --ion-color-base: var(--ion-color-quinary);
+  --ion-color-base-rgb: var(--ion-color-quinary-rgb);
+  --ion-color-contrast: var(--ion-color-quinary-contrast);
+}
 /** Como font **/
 @import url("https://use.typekit.net/ujv8bqq.css"); 
 

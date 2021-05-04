@@ -6,7 +6,7 @@ const Recipes: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar color="quinary">
           <IonTitle class="header__title">Recepten</IonTitle>
         </IonToolbar>
       </IonHeader>
