@@ -9,7 +9,7 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { fish, basketball, person, heart } from 'ionicons/icons';
+import { fish, basketball, add, person, heart } from 'ionicons/icons';
 import Recipes from './pages/Recipes'
 import Workouts from './pages/Workouts';
 import User from './pages/User';
@@ -37,6 +37,11 @@ import './theme/variables.css';
 import './pages/style.css';
 
 const App: React.FC = () => (
+  // If we need some JS logic, we can do that here.
+  //If so, we need to change the bracket to a curly bracket and add a return to the ionic components
+// const App: React.FC = () => {
+
+  // return (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
@@ -62,7 +67,10 @@ const App: React.FC = () => (
             <IonIcon icon={fish} />
           </IonTabButton>
           <IonTabButton tab="workouts" href="/Workouts">
-          <IonIcon icon={basketball} />
+            <IonIcon icon={basketball} />
+          </IonTabButton>
+          <IonTabButton tab="filters" href="">
+            <IonIcon icon={add} />
           </IonTabButton>
           <IonTabButton tab="user" href="/User">
             <IonIcon icon={person} />
@@ -74,6 +82,8 @@ const App: React.FC = () => (
       </IonTabs>
     </IonReactRouter>
   </IonApp>
+// )
 );
+// };
 
 export default App;
