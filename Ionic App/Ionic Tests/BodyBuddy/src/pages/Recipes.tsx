@@ -2,6 +2,8 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem,
 import ExploreContainer from '../components/ExploreContainer';
 import './Recipes.css';
 
+import Recipe from '../components/Recipe';
+
 const Recipes: React.FC = () => {
   return (
     <IonPage>
@@ -16,7 +18,13 @@ const Recipes: React.FC = () => {
             <IonTitle size="large" class="title">Recepten</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Recepten" />
+        {/* <ExploreContainer name="Recepten" /> */}
+        <Recipe />
+        <Recipe />
+        <Recipe />
+        <Recipe />
+        <Recipe />
+        <Recipe />
       </IonContent>
     </IonPage>
   );
