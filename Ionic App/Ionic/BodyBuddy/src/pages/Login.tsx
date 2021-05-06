@@ -3,13 +3,16 @@ import { IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonInput, IonButt
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { loginUser } from '../FirebaseFunctions';
+
 const Login: React.FC = () => {
 
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 
-	function loginUser() {
-		console.log(username, password);
+	async function login() {
+		const res = await loginUser( username, password );
+		console.log(`${res ? 'Login success!' : 'Login failed...' }` );
 	}
 
 	return(
@@ -32,7 +35,7 @@ const Login: React.FC = () => {
 						<IonInput type="password" onIonChange={ ( e:any ) => setPassword( e.target.value ) }></IonInput>
 					</IonItem>
 					<IonItem>
-						<IonButton onClick={ loginUser }>Log in</IonButton>
+						<IonButton onClick={ login }>Log in</IonButton>
 					</IonItem>
 					<IonItem>
 						<p>Nog geen account? <Link to="/register">Maak een account aan!</Link></p>
