@@ -11,12 +11,19 @@ const Home: React.FC = () => {
 				</IonToolbar>
 			</IonHeader>
 			<IonContent>
-				<IonButton routerLink="./Login">
-					Log in
-				</IonButton>
-				<IonButton routerLink="./Register">
-					Registreer
-				</IonButton>
+				<IonGrid className="ion-text-center">
+					<IonRow>
+						<IonCol>
+							<IonButton routerLink="./Login">
+								Log in
+							</IonButton>
+							<IonButton routerLink="./Register">
+								Registreren
+							</IonButton>
+						</IonCol>
+					</IonRow>
+				</IonGrid>
+				
 			</IonContent>
 		</IonPage>
 	)
