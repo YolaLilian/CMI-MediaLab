@@ -2,7 +2,6 @@ import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
-  IonLabel,
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
@@ -14,6 +13,9 @@ import Recipes from './pages/Recipes'
 import Workouts from './pages/Workouts';
 import User from './pages/User';
 import Buddy from './pages/Buddy';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Home from './pages/Home';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -46,20 +48,29 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/register">
+            <Register />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
           <Route exact path="/recipes">
             <Recipes />
           </Route>
           <Route exact path="/workouts">
             <Workouts />
           </Route>
-          <Route path="/user">
+          <Route exact path="/user">
             <User />
           </Route>
-          <Route path="/buddy">
+          <Route exact path="/buddy">
             <Buddy />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/recipes" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar color="primary" slot="bottom">
