@@ -3,14 +3,27 @@ import { IonPage, IonHeader, IonToolbar, IonContent, IonList, IonItem, IonTitle,
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { registerUser } from '../FirebaseConfig';
+
 const Register: React.FC = () => {
 
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const [confPassword, setConfPassword] = useState('');
 
-	function registerUser() {
+	async function register() {
 		console.log(username, password);
+		
+		if ( password !== confPassword ) {
+			console.log("Passwords do not match!");
+			return;
+		};
+
+		if ( username.trim() === '' || password.trim() === '' ) {
+			console.log("Username and password cannot be empty!");
+		};
+
+		const res = await registerUser(username, password)
 	}
 
 	return(
@@ -37,7 +50,7 @@ const Register: React.FC = () => {
 						<IonInput type="password"  onIonChange={ ( e:any ) => setConfPassword( e.target.value ) }></IonInput>
 					</IonItem>
 					<IonItem>
-						<IonButton onClick={ registerUser }>Registreer!</IonButton>
+						<IonButton onClick={ register }>Registreer!</IonButton>
 					</IonItem>
 					<IonItem>
 						<p>Al een account? <Link to="/login">Log in!</Link></p>

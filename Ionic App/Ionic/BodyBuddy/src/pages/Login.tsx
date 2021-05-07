@@ -2,8 +2,9 @@ import { IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonInput, IonButt
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from '../components/Toast';
 
-import { loginUser } from '../FirebaseFunctions';
+import { loginUser } from '../FirebaseConfig';
 
 const Login: React.FC = () => {
 
@@ -11,8 +12,15 @@ const Login: React.FC = () => {
 	const [password, setPassword] = useState('');
 
 	async function login() {
+		
 		const res = await loginUser( username, password );
-		console.log(`${res ? 'Login success!' : 'Login failed...' }` );
+		
+		if ( !res ) {
+			toast('Login failed');
+		} else {
+			toast("You have logged in!");
+		};
+	
 	}
 
 	return(

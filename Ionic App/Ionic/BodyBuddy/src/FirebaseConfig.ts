@@ -1,4 +1,7 @@
 import firebase from 'firebase';
+import 'firebase/auth';
+
+import { toast } from './components/Toast';
 
 const config = {
 	apiKey: "AIzaSyB8FcPXFNzyODI6MJzBUCpotLgqGTph7-Q",
@@ -10,10 +13,42 @@ const config = {
     measurementId: "G-BPPN0K5G9D"
 };
 
+var app: any = '';
+
 if ( !firebase.apps.length ) {
-    firebase.initializeApp( config );
+    app = firebase.initializeApp( config );
 } else {
-    firebase.app(); // if already initialized, use that one
+    firebase.app();
+};
+  
+export async function loginUser( username: string, password: string) {
+
+    const email = `${username}@bodybuddy.com`;
+
+    try {
+        const res = await firebase.auth().signInWithEmailAndPassword( email, password );
+        console.log( res );
+        return true;
+    } catch ( error ) {
+        console.log( error );
+        return false;
+    }
+
 };
 
+export async function registerUser(username: string, password: string) {
+    const email = `${username}@bodybuddy.com`;
 
+    try {
+        const res = await firebase.auth().createUserWithEmailAndPassword( email, password );
+        toast("Registered successfully!")
+        return true;
+    } catch ( error ) {
+        toast(error.message, 4000);
+        return ;
+    }
+
+}
+
+// export const auth = app.auth(); 
+export default app;
