@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from '../components/Toast';
 
-import { loginUser } from '../FirebaseConfig';
+import { loginUser } from '../FirebaseFunctions';
 
 const Login: React.FC = () => {
 

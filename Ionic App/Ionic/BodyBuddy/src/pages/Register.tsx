@@ -3,7 +3,7 @@ import { IonPage, IonHeader, IonToolbar, IonContent, IonList, IonItem, IonTitle,
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { registerUser } from '../FirebaseConfig';
+import { registerUser } from '../FirebaseFunctions';
 
 const Register: React.FC = () => {
 
