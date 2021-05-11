@@ -10,6 +10,7 @@ const Register: React.FC = () => {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const [confPassword, setConfPassword] = useState('');
+	const [yearOfBirth, setYearOfBirth] = useState('');
 
 	async function register() {
 		console.log(username, password);
@@ -19,11 +20,11 @@ const Register: React.FC = () => {
 			return;
 		};
 
-		if ( username.trim() === '' || password.trim() === '' ) {
+		if ( username.trim() === '' || password.trim() === '' || yearOfBirth.trim() === '' ) {
 			console.log("Username and password cannot be empty!");
 		};
 
-		const res = await registerUser(username, password)
+		const res = await registerUser(username, password, yearOfBirth)
 	}
 
 	return(
@@ -48,6 +49,10 @@ const Register: React.FC = () => {
 					<IonItem>
 						<IonLabel position="floating">Bevestig wachtwoord</IonLabel>
 						<IonInput type="password"  onIonChange={ ( e:any ) => setConfPassword( e.target.value ) }></IonInput>
+					</IonItem>
+					<IonItem>
+						<IonLabel position="floating">Geboortejaar</IonLabel>
+						<IonInput type="text"  onIonChange={ ( e:any ) => setYearOfBirth( e.target.value ) }></IonInput>
 					</IonItem>
 					<IonItem>
 						<IonButton onClick={ register }>Registreer!</IonButton>
