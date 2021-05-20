@@ -32,7 +32,7 @@ export const RecipeList = () => {
 				return <React.Fragment key={index}> {
 					<IonItem>
 						<IonCard>
-							<IonTitle>{anObjectMapped[1]}</IonTitle>
+							<IonTitle>{anObjectMapped[2]}</IonTitle>
 						</IonCard>
 					</IonItem>
 					
