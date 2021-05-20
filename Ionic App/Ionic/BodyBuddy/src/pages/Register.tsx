@@ -7,24 +7,24 @@ import { registerUser } from '../FirebaseFunctions';
 
 const Register: React.FC = () => {
 
-	const [username, setUsername] = useState('');
+	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [confPassword, setConfPassword] = useState('');
 	const [yearOfBirth, setYearOfBirth] = useState('');
 
 	async function register() {
-		console.log(username, password);
+		console.log(email, password);
 		
 		if ( password !== confPassword ) {
 			console.log("Passwords do not match!");
 			return;
 		};
 
-		if ( username.trim() === '' || password.trim() === '' || yearOfBirth.trim() === '' ) {
-			console.log("Username and password cannot be empty!");
+		if ( email.trim() === '' || password.trim() === '' || yearOfBirth.trim() === '' ) {
+			console.log("Email and password cannot be empty!");
 		};
 
-		const res = await registerUser(username, password, yearOfBirth)
+		const res = await registerUser(email, password, yearOfBirth)
 	}
 
 	return(
@@ -39,8 +39,8 @@ const Register: React.FC = () => {
 			<IonContent>
 				<IonList>
 					<IonItem>
-						<IonLabel position="floating">Gebruikersnaam</IonLabel>
-						<IonInput type="text" onIonChange={ ( e:any ) => setUsername( e.target.value ) }></IonInput>	
+						<IonLabel position="floating">Emailadres</IonLabel>
+						<IonInput type="text" onIonChange={ ( e:any ) => setEmail( e.target.value ) }></IonInput>	
 					</IonItem>
 					<IonItem>
 						<IonLabel position="floating">Wachtwoord</IonLabel>

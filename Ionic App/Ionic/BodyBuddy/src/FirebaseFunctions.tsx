@@ -1,14 +1,12 @@
 import firebase from './FirebaseConfiguration';
-import 'firebase/auth';
-import 'firebase/firestore';
 
 import { toast } from './components/Toast';
 
-const db = firebase.firestore();
-  
-export async function loginUser( username: string, password: string) {
 
-    const email = `${username}@bodybuddy.com`;
+const db = firebase.firestore();
+const userDB = db.collection("/users");
+
+export async function loginUser( email: string, password: string) {
 
     try {
         const res = await firebase.auth().signInWithEmailAndPassword( email, password );
@@ -21,15 +19,12 @@ export async function loginUser( username: string, password: string) {
 
 };
 
-export async function registerUser(username: string, password: string, yearOfBirth: string) {
-    
-    const email = `${username}@bodybuddy.com`;
+export async function registerUser(email: string, password: string, yearOfBirth: string) {
 
-    // try {
     firebase.auth().createUserWithEmailAndPassword( email, password )
     .then( (cred: { user: { uid: string; }; }) => {
         return db.collection( 'users' ).doc(cred.user.uid).set( {
-            username: username,
+            email: email,
             yearOfBirth: yearOfBirth
         });
     })
@@ -38,5 +33,28 @@ export async function registerUser(username: string, password: string, yearOfBir
         toast(error.message, 4000);
         return;
     });
+
+};
+
+export function getUsers(): [] {
+
+    return (
+        userDB.get()
+        .then((snapshot: any) => {
+
+            var users: [ id: any, username: any, yearOfBirth: any ][] = [];
+
+            snapshot.forEach( (doc: any) => {
+
+                users.push( [doc.id, doc.data().username, doc.data().yearOfBirth] );
+
+            });
+
+            return(users);
+
+        })
+        .catch( Error )
+
+    )
 
 };

@@ -1,15 +1,19 @@
 import React from 'react';
 
-import { IonItem } from '@ionic/react';
+import { IonItem, IonText } from '@ionic/react';
 
-import Card from './Card';
+import Card from './RecipeCard';
 
 const Recipe: React.FC = () => {
+
 	return(
-		<IonItem>
-			<Card />
-		</IonItem>
-	);
+		
+		<IonText>
+			Hoi!
+		</IonText>
+		
+	)
+	
 };
 
 export default Recipe;

@@ -8,12 +8,12 @@ import { loginUser } from '../FirebaseFunctions';
 
 const Login: React.FC = () => {
 
-	const [username, setUsername] = useState('');
+	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
 	async function login() {
 		
-		const res = await loginUser( username, password );
+		const res = await loginUser( email, password );
 		
 		if ( !res ) {
 			toast('Login failed');
@@ -36,7 +36,7 @@ const Login: React.FC = () => {
 				<IonList>
 					<IonItem>
 						<IonLabel position="floating">Gebruikersnaam</IonLabel>
-						<IonInput type="text" onIonChange={ ( e:any ) => setUsername( e.target.value ) }></IonInput>	
+						<IonInput type="text" onIonChange={ ( e:any ) => setEmail( e.target.value ) }></IonInput>	
 					</IonItem>
 					<IonItem>
 						<IonLabel position="floating">Wachtwoord</IonLabel>

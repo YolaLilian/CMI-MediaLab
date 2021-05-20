@@ -5,4 +5,4 @@ export function toast(message:string, duration = 4000) {
   
 	document.body.appendChild(toast);
 	return toast.present();
-  }
+}
