@@ -3,13 +3,26 @@ import { IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonInput, IonButt
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { toast } from '../components/Toast';
+
+import { loginUser } from "../functions";
+
 const Login: React.FC = () => {
 
-	const [username, setUsername] = useState('');
+	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-	function loginUser() {
-		console.log(username, password);
+	async function login() {
+
+		console.log( email, password );
+
+		const res = await loginUser( email, password );
+
+		if ( !res ) {
+			toast('Login mislukt... Controleer uw gegevens');
+		} else {
+			toast("U bent succesvol ingelogd!");
+		};
 	}
 
 	return(
@@ -25,14 +38,14 @@ const Login: React.FC = () => {
 				<IonList>
 					<IonItem>
 						<IonLabel position="floating">Gebruikersnaam</IonLabel>
-						<IonInput type="text" onIonChange={ ( e:any ) => setUsername( e.target.value ) }></IonInput>	
+						<IonInput type="text" onIonChange={ ( e:any ) => setEmail( e.target.value ) }></IonInput>	
 					</IonItem>
 					<IonItem>
 						<IonLabel position="floating">Wachtwoord</IonLabel>
 						<IonInput type="password" onIonChange={ ( e:any ) => setPassword( e.target.value ) }></IonInput>
 					</IonItem>
 					<IonItem>
-						<IonButton onClick={ loginUser }>Log in</IonButton>
+						<IonButton onClick={ login }>Log in</IonButton>
 					</IonItem>
 					<IonItem>
 						<p>Nog geen account? <Link to="/register">Maak een account aan!</Link></p>
