@@ -1,7 +1,8 @@
 import express from 'express';
+import RecipesController from "./recipesController.js";
 
 const router = express.Router();
 
-router.route("/").get( ( req, res ) => res.send("hello World!" ) );
+router.route("/").get( RecipesController.apiGetRecipes );
 
 export default router;

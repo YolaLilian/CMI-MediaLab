@@ -2,7 +2,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem,
 import ExploreContainer from '../components/ExploreContainer';
 import './Recipes.css';
 
-import Recipe from '../components/Recipe';
+import { RecipeList } from '../components/RecipeList';
 
 const Recipes: React.FC = () => {
   return (
@@ -19,12 +19,7 @@ const Recipes: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         {/* <ExploreContainer name="Recepten" /> */}
-        <Recipe />
-        <Recipe />
-        <Recipe />
-        <Recipe />
-        <Recipe />
-        <Recipe />
+        <RecipeList />
       </IonContent>
     </IonPage>
   );
