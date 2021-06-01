@@ -14,8 +14,6 @@ const Register: React.FC = () => {
 	const [confPassword, setConfPassword] = useState('');
 
 	async function register() {
-
-		console.log(email, password);
 		
 		if ( password !== confPassword ) {
 			toast("Passwords do not match!");

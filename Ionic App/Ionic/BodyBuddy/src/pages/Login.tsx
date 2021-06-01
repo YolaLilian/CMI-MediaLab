@@ -15,8 +15,6 @@ const Login: React.FC = () => {
 
 	async function login() {
 
-		console.log( email, password );
-
 		const res = await loginUser( email, password );
 
 		if ( !res ) {
@@ -41,15 +39,15 @@ const Login: React.FC = () => {
 				<IonList id="login_list">
 					<IonItem>
 						<IonLabel position="stacked">Emailadres</IonLabel>
-						<IonInput type="text" onIonChange={(e: any) => setEmail(e.target.value)}></IonInput>
+						<IonInput type="text" onIonChange={ ( e: any ) => setEmail( e.target.value ) }></IonInput>
 					</IonItem>
 					<IonItem>
 						<IonLabel position="stacked">Wachtwoord</IonLabel>
-						<IonInput type="password" onIonChange={(e: any) => setPassword(e.target.value)}></IonInput>
+						<IonInput type="password" onIonChange={ ( e: any ) => setPassword( e.target.value ) }></IonInput>
 					</IonItem>
 				</IonList>
 				<p id="registreren">Nog geen account? <Link to="/register">Maak een account aan!</Link></p>
-				<IonButton id="login_button" onClick={loginUser}>Log in</IonButton>
+				<IonButton id="login_button" onClick={ login }>Log in</IonButton>
 			</IonContent>
 		</IonPage>
 	)
