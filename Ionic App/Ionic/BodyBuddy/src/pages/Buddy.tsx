@@ -7,13 +7,13 @@ const Buddy: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar color="quinary">
-          <IonTitle class="header__title">Find a buddy</IonTitle>
+          <IonTitle className="header__title">Find a buddy</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large" class="title" >Tab 3</IonTitle>
+            <IonTitle size="large" className="title" >Tab 3</IonTitle>
           </IonToolbar>
         </IonHeader>
         <ExploreContainer name="Find a buddy" />

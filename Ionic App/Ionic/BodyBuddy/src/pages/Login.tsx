@@ -25,16 +25,16 @@ const Login: React.FC = () => {
 	}
 
 	return (
-		<IonPage class="login_body">
+		<IonPage className="login_body">
 			<IonHeader>
 				<IonToolbar color="quinary">
-					<IonTitle class="header__title">
+					<IonTitle className="header__title">
 						Log in
 					</IonTitle>
 				</IonToolbar>
 			</IonHeader>
-			<IonContent class="background">
-				<IonImg class="loginscreen_char" src="../../assets/images/background/loginscreen_char.png" />
+			<IonContent className="background">
+				<IonImg className="loginscreen_char" src="../../assets/images/background/loginscreen_char.png" />
 				<h1 id="login">Login</h1>
 				<IonList id="login_list">
 					<IonItem>

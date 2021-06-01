@@ -9,13 +9,13 @@ const Recipes: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar color="quinary">
-          <IonTitle class="header__title">Recepten</IonTitle>
+          <IonTitle className="header__title">Recepten</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large" class="title">Recepten</IonTitle>
+            <IonTitle size="large" className="title">Recepten</IonTitle>
           </IonToolbar>
         </IonHeader>
         {/* <ExploreContainer name="Recepten" /> */}

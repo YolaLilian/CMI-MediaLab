@@ -9,13 +9,13 @@ const Workouts: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar color="quinary">
-          <IonTitle class="header__title">Oefeningen</IonTitle>
+          <IonTitle className="header__title">Oefeningen</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large" class="title">Sporten</IonTitle>
+            <IonTitle size="large" className="title">Sporten</IonTitle>
           </IonToolbar>
         </IonHeader>
         <ExploreContainer name="Workouts page" />
