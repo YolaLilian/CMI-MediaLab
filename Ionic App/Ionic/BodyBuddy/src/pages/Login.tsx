@@ -1,7 +1,8 @@
-import { IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonInput, IonButton, IonLabel, IonList, IonItem, } from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonInput, IonButton, IonLabel, IonList, IonItem, IonImg } from '@ionic/react';
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
+import './Login.css';
 
 const Login: React.FC = () => {
 
@@ -12,8 +13,8 @@ const Login: React.FC = () => {
 		console.log(username, password);
 	}
 
-	return(
-		<IonPage>
+	return (
+		<IonPage class="login_body">
 			<IonHeader>
 				<IonToolbar color="quinary">
 					<IonTitle class="header__title">
@@ -21,23 +22,21 @@ const Login: React.FC = () => {
 					</IonTitle>
 				</IonToolbar>
 			</IonHeader>
-			<IonContent>
-				<IonList>
+			<IonContent class="background">
+				<IonImg class="loginscreen_char" src="../../assets/images/background/loginscreen_char.png" />
+				<h1 id="login">Login</h1>
+				<IonList id="login_list">
 					<IonItem>
-						<IonLabel position="floating">Gebruikersnaam</IonLabel>
-						<IonInput type="text" onIonChange={ ( e:any ) => setUsername( e.target.value ) }></IonInput>	
+						<IonLabel position="stacked">Gebruikersnaam</IonLabel>
+						<IonInput type="text" onIonChange={(e: any) => setUsername(e.target.value)}></IonInput>
 					</IonItem>
 					<IonItem>
-						<IonLabel position="floating">Wachtwoord</IonLabel>
-						<IonInput type="password" onIonChange={ ( e:any ) => setPassword( e.target.value ) }></IonInput>
-					</IonItem>
-					<IonItem>
-						<IonButton onClick={ loginUser }>Log in</IonButton>
-					</IonItem>
-					<IonItem>
-						<p>Nog geen account? <Link to="/register">Maak een account aan!</Link></p>
+						<IonLabel position="stacked">Wachtwoord</IonLabel>
+						<IonInput type="password" onIonChange={(e: any) => setPassword(e.target.value)}></IonInput>
 					</IonItem>
 				</IonList>
+				<p id="registreren">Nog geen account? <Link to="/register">Maak een account aan!</Link></p>
+				<IonButton id="login_button" onClick={loginUser}>Log in</IonButton>
 			</IonContent>
 		</IonPage>
 	)

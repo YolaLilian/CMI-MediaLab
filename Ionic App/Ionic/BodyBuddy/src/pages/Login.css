@@ -1,0 +1,46 @@
+.login_body{
+    /** the basic --ion-background color is white, found in theme/variables.css **/
+    --ion-background-color:#faf2ea;
+}
+
+#login_list{
+  margin: auto;
+  margin-top: 5px;
+  width: 80%;
+  font-size: small;
+  background-color: #faf2ea !important;
+}
+
+#login_button{
+  margin: 0;
+  margin-left: 33%;
+  padding: 6px;
+}
+
+.background{
+    background-color: #faf2ea !important;
+    /* --background: url(../img/background/clean_background.png) 0 0/100% 100% no-repeat; */
+}
+
+.loginscreen_char{
+  width: 70%;
+  margin-left: 17%;
+  margin-top: 13%;
+  padding-bottom: -50%;
+}
+
+#login{
+  margin: 0;
+  font-family: Como;
+  margin-left: 10%;
+  color: #4c408a; 
+}
+
+#registreren{
+  margin-left: 20px;
+  font-family: Como;
+  color:#f3a8b3;
+  font-size: small;
+  margin: 0;
+  margin-bottom: 3px;
+}

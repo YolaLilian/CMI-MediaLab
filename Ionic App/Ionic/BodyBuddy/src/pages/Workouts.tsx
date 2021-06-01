@@ -2,12 +2,14 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import ExploreContainer from '../components/ExploreContainer';
 import './Workouts.css';
 
+import Workout from '../components/Workout';
+
 const Workouts: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar color="quinary">
-          <IonTitle class="header__title">Sporten</IonTitle>
+          <IonTitle class="header__title">Oefeningen</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -17,6 +19,12 @@ const Workouts: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <ExploreContainer name="Workouts page" />
+        <Workout />
+        <Workout />
+        <Workout />
+        <Workout />
+        <Workout />
+        <Workout />
       </IonContent>
     </IonPage>
   );

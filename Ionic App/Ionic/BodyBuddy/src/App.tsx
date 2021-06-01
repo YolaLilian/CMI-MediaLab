@@ -8,7 +8,7 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { fish, basketball, add, person, heart } from 'ionicons/icons';
+import { restaurant, basketball, add, person, heart, barbell } from 'ionicons/icons';
 import Recipes from './pages/Recipes'
 import Workouts from './pages/Workouts';
 import User from './pages/User';
@@ -49,7 +49,7 @@ const App: React.FC = () => (
       <IonTabs>
         <IonRouterOutlet>
           <Route exact path="/">
-            <Redirect to="/home" />
+            <Redirect to="/login" />
           </Route>
           <Route exact path="/home">
             <Home />
@@ -75,10 +75,10 @@ const App: React.FC = () => (
         </IonRouterOutlet>
         <IonTabBar color="primary" slot="bottom">
           <IonTabButton tab="recipes" href="/recipes">
-            <IonIcon icon={fish} />
+            <IonIcon icon={restaurant} />
           </IonTabButton>
           <IonTabButton tab="workouts" href="/Workouts">
-            <IonIcon icon={basketball} />
+            <IonIcon icon={barbell} />
           </IonTabButton>
           <IonTabButton tab="filters" href="">
             <IonIcon icon={add} />
