@@ -4,13 +4,26 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom'; 
 import './Login.css';
 
+import { toast } from '../components/Toast';
+
+import { loginUser } from "../functions";
+
 const Login: React.FC = () => {
 
-	const [username, setUsername] = useState('');
+	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-	function loginUser() {
-		console.log(username, password);
+	async function login() {
+
+		console.log( email, password );
+
+		const res = await loginUser( email, password );
+
+		if ( !res ) {
+			toast('Login mislukt... Controleer uw gegevens');
+		} else {
+			toast("U bent succesvol ingelogd!");
+		};
 	}
 
 	return (
@@ -27,8 +40,8 @@ const Login: React.FC = () => {
 				<h1 id="login">Login</h1>
 				<IonList id="login_list">
 					<IonItem>
-						<IonLabel position="stacked">Gebruikersnaam</IonLabel>
-						<IonInput type="text" onIonChange={(e: any) => setUsername(e.target.value)}></IonInput>
+						<IonLabel position="stacked">Emailadres</IonLabel>
+						<IonInput type="text" onIonChange={(e: any) => setEmail(e.target.value)}></IonInput>
 					</IonItem>
 					<IonItem>
 						<IonLabel position="stacked">Wachtwoord</IonLabel>
