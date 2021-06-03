@@ -10,14 +10,6 @@ export const RecipeList = () => {
 
 	useEffect(() => {
 
-		// async function loadData() {
-			
-			// const loadedData = await RecipeDataService.getAll();
-			// console.log( response.data );
-			// setData( response.data.recipes );
-
-		// }
-
 		loadData();
 
 	}, [] );

@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "BodyBuddy",
+  "appName": "Mynd",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
