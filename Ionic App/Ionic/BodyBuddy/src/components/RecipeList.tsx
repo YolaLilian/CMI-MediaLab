@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { IonList, IonItem, IonCard, IonTitle, IonText } from '@ionic/react';
+import { IonList, IonItem, IonCard, IonTitle, IonText, IonCardHeader } from '@ionic/react';
 
 import RecipeDataService from "../services/recipe";
 
@@ -24,11 +24,11 @@ export const RecipeList = () => {
 
 	const loadData = () => {
 		RecipeDataService.getAll()
-		.then( response => {
+		.then( ( response: { data: { recipes: React.SetStateAction<never[]>; }; } ) => {
 			// console.log( response.data );
 			setData( response.data.recipes );
 		} )
-		.catch ( error => {
+		.catch ( ( error: any) => {
 			console.log( error );
 		} );
 	};
