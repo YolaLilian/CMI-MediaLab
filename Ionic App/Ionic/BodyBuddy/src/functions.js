@@ -30,3 +30,27 @@ export async function loginUser( email, password ) {
 	}
 
 }
+
+export async function additionalRegistration( email, password, name ) {
+
+	const user = await app.logIn( Realm.Credentials.emailPassword( email, password ) );
+	const mongo = user.mongoClient("mongodb-atlas");
+	const collection = mongo.db("mynd").collection("users");
+
+	const filter = {
+		userID: user.id,
+	};
+
+	const newUser = {
+
+		"name": name,
+		"partition": "thing"
+	};
+
+	try {
+		await collection.insertOne( newUser );
+		toast( "Gelukt! De gegevens zijn opgeslagen." );
+	} catch ( error ) {
+		console.log( error );
+	}
+}

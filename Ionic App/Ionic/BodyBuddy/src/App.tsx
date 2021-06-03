@@ -16,6 +16,7 @@ import Buddy from './pages/Buddy';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
+import AdditionalRegistration from './pages/AdditionalRegistration';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -57,6 +58,9 @@ const App: React.FC = () => (
           <Route exact path="/register">
             <Register />
           </Route>
+		  <Route exact path="/additionalregistration">
+            <AdditionalRegistration />
+          </Route>
           <Route exact path="/login">
             <Login />
           </Route>
@@ -77,16 +81,16 @@ const App: React.FC = () => (
           <IonTabButton tab="recipes" href="/recipes">
             <IonIcon icon={restaurant} />
           </IonTabButton>
-          <IonTabButton tab="workouts" href="/Workouts">
+          <IonTabButton tab="workouts" href="/workouts">
             <IonIcon icon={barbell} />
           </IonTabButton>
           <IonTabButton tab="filters" href="">
             <IonIcon icon={add} />
           </IonTabButton>
-          <IonTabButton tab="user" href="/User">
+          <IonTabButton tab="user" href="/user">
             <IonIcon icon={person} />
           </IonTabButton>
-          <IonTabButton tab="buddy" href="/Buddy">
+          <IonTabButton tab="buddy" href="/buddy">
             <IonIcon icon={heart} />
           </IonTabButton>
         </IonTabBar>
