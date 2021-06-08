@@ -5,17 +5,16 @@ import { toast } from './components/Toast';
 const REALM_APP_ID = 'mynd-erhmw';
 const app = new Realm.App( { id: REALM_APP_ID } );
 
-export async function registerUser( email, password ) {
-	
+export async function handleRegistrationAndLogin( email, password, name, dateOfBirth, residence ) {
+
 	try {
 		await app.emailPasswordAuth.registerUser( email, password );
+		await additionalRegistration( email, password, name, dateOfBirth, residence );
 		toast( "Gelukt! U bent geregistreerd!" );
-        return true;
-    } catch ( error ) {
-        console.log( error );
+	} catch ( error ) {
+		console.log( error );
 		toast( "Er is iets misgegaan!" );
-        return false;
-    }
+	}
 
 }
 
@@ -31,7 +30,7 @@ export async function loginUser( email, password ) {
 
 }
 
-export async function additionalRegistration( email, password, name ) {
+export async function additionalRegistration( email, password, name, dateOfBirth, residence ) {
 
 	const user = await app.logIn( Realm.Credentials.emailPassword( email, password ) );
 	const mongo = user.mongoClient("mongodb-atlas");
@@ -44,6 +43,10 @@ export async function additionalRegistration( email, password, name ) {
 	const newUser = {
 
 		"name": name,
+		"dateOfBirth": dateOfBirth,
+		"residence": residence,
+		"dateOfRegistration": new Date().toISOString().split( "T" )[0],
+		"coach": "",
 		"partition": "thing"
 	};
 
