@@ -1,5 +1,4 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
 import './Workouts.css';
 
 import Workout from '../components/Workout';
@@ -18,7 +17,6 @@ const Workouts: React.FC = () => {
             <IonTitle size="large" className="title">Sporten</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Workouts page" />
         <Workout />
         <Workout />
         <Workout />

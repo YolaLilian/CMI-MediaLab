@@ -3,7 +3,14 @@ import * as Realm from 'realm-web';
 import { toast } from './components/Toast';
 
 const REALM_APP_ID = 'mynd-erhmw';
+
 const app = new Realm.App( { id: REALM_APP_ID } );
+
+export const useRealmApp = () => {
+
+	return app;
+
+}
 
 export async function handleRegistrationAndLogin( email, password, name, dateOfBirth, residence ) {
 
@@ -36,13 +43,11 @@ export async function additionalRegistration( email, password, name, dateOfBirth
 	const mongo = user.mongoClient("mongodb-atlas");
 	const collection = mongo.db("mynd").collection("users");
 
-	const filter = {
-		userID: user.id,
-	};
-
 	const newUser = {
 
+		"user_id": user.id,
 		"name": name,
+		"email": email,
 		"dateOfBirth": dateOfBirth,
 		"residence": residence,
 		"dateOfRegistration": new Date().toISOString().split( "T" )[0],
@@ -52,8 +57,27 @@ export async function additionalRegistration( email, password, name, dateOfBirth
 
 	try {
 		await collection.insertOne( newUser );
-		toast( "Gelukt! De gegevens zijn opgeslagen." );
+		await user.refreshCustomData();
 	} catch ( error ) {
 		console.log( error );
 	}
+}
+
+export function checkLoginStatus() {
+
+	return app.currentUser;
+	// console.log( app.currentUser )
+}
+
+export async function logOut() {
+
+	try {
+		app.currentUser.logOut();
+		toast( "U bent uitgelogd.");
+
+	} catch ( error ) {
+		console.log( error );
+		toast( "Er is iets misgegaan met uitloggen")
+	}
+
 }

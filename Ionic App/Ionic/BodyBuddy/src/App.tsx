@@ -8,14 +8,17 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { restaurant, basketball, add, person, heart, barbell } from 'ionicons/icons';
+import { restaurant, home, person, heart, barbell } from 'ionicons/icons';
+
+import { ProtectedRoute } from './components/ProtectedRoute';
+
 import Recipes from './pages/Recipes'
 import Workouts from './pages/Workouts';
 import User from './pages/User';
 import Buddy from './pages/Buddy';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Home from './pages/Home';
+import Mood from './pages/Mood';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -38,63 +41,53 @@ import './theme/variables.css';
 
 import './pages/style.css';
 
-const App: React.FC = () => (
+export default function App() {
   // If we need some JS logic, we can do that here.
   //If so, we need to change the bracket to a curly bracket and add a return to the ionic components
 // const App: React.FC = () => {
 
-  // return (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route exact path="/">
-            <Redirect to="/login" />
-          </Route>
-          <Route exact path="/home">
-            <Home />
-          </Route>
-          <Route exact path="/register">
-            <Register />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/recipes">
-            <Recipes />
-          </Route>
-          <Route exact path="/workouts">
-            <Workouts />
-          </Route>
-          <Route exact path="/user">
-            <User />
-          </Route>
-          <Route exact path="/buddy">
-            <Buddy />
-          </Route>
-        </IonRouterOutlet>
-        <IonTabBar color="primary" slot="bottom">
-          <IonTabButton tab="recipes" href="/recipes">
-            <IonIcon icon={restaurant} />
-          </IonTabButton>
-          <IonTabButton tab="workouts" href="/workouts">
-            <IonIcon icon={barbell} />
-          </IonTabButton>
-          <IonTabButton tab="filters" href="">
-            <IonIcon icon={add} />
-          </IonTabButton>
-          <IonTabButton tab="user" href="/user">
-            <IonIcon icon={person} />
-          </IonTabButton>
-          <IonTabButton tab="buddy" href="/buddy">
-            <IonIcon icon={heart} />
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-// )
-);
-// };
+	return (
+		<IonApp>
+			<IonReactRouter>
+				<IonTabs>
+					<IonRouterOutlet>
+						<Route exact path="/">
+							<Redirect to="/login" />
+						</Route>
+						<Route exact path="/register">
+							<Register />
+						</Route>
+						<Route exact path="/login">
+							<Login />
+						</Route>
+						<ProtectedRoute exact path="/mood" component={Mood}/>
+						<ProtectedRoute exact path="/recipes" component= {Recipes} />
+						<ProtectedRoute exact path="/workouts" component={Workouts} />
+						<ProtectedRoute exact path="/user" component={User}/>
+						<ProtectedRoute exact path="/buddy" component={Buddy}/>
+					</IonRouterOutlet>
+					<IonTabBar color="primary" slot="bottom">
+						<IonTabButton tab="recipes" href="/recipes">
+							<IonIcon icon={restaurant} />
+						</IonTabButton>
+						<IonTabButton tab="workouts" href="/workouts">
+							<IonIcon icon={barbell} />
+						</IonTabButton>
+						<IonTabButton tab="mood" href="/mood">
+							<IonIcon icon={home} />
+						</IonTabButton>
+						<IonTabButton tab="user" href="/user">
+							<IonIcon icon={person} />
+						</IonTabButton>
+						<IonTabButton tab="buddy" href="/buddy">
+							<IonIcon icon={heart} />
+						</IonTabButton>
+					</IonTabBar>
+				</IonTabs>
+			</IonReactRouter>
+		</IonApp>
+	)
+// );
+};
 
-export default App;
+// export default App;
