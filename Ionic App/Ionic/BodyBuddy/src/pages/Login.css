@@ -1,20 +1,21 @@
-.login_body{
+.login__body{
     /** the basic --ion-background color is white, found in theme/variables.css **/
-    --ion-background-color:#faf2ea;
+    --ion-background-color:#ffffff;
 }
 
-#login_list{
+#login__list{
   margin: auto;
   margin-top: 5px;
   width: 80%;
   font-size: small;
-  background-color: #faf2ea !important;
+  background-color: #ffffff !important;
 }
 
-#login_button{
+#login__button{
   margin: 0;
-  margin-left: 33%;
-  padding: 6px;
+  margin-left: 35%;
+  padding: 1px;
+  width: 28%;
 }
 
 .background{
@@ -22,11 +23,11 @@
     /* --background: url(../img/background/clean_background.png) 0 0/100% 100% no-repeat; */
 }
 
-.loginscreen_char{
-  width: 70%;
-  margin-left: 17%;
-  margin-top: 13%;
-  padding-bottom: -50%;
+.loginscreen__char{
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 7%;
+  padding-bottom: 7%;
 }
 
 #login{
@@ -37,10 +38,29 @@
 }
 
 #registreren{
-  margin-left: 20px;
+  /* margin-left: 20px; */
   font-family: Como;
   color:#f3a8b3;
   font-size: small;
   margin: 0;
   margin-bottom: 3px;
+  padding-bottom: 15px;
+  padding-left: 17%;
+}
+
+#header__tekst{
+  font-family: Como;
+  color:#f3a8b3;
+  font-size: medium;
+  margin-bottom: 3px;
+  margin-left: 25%;
+  padding-bottom: 0;
+  /* padding-left: 17%; */
+}
+
+.input__login {
+  background-color: #f3a8b3 !important;
+  border-radius: 15px;
+  --padding-top: 0px !important;
+  --padding-bottom: 0px !important;
 }

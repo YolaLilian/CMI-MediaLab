@@ -25,29 +25,24 @@ const Login: React.FC = () => {
 	}
 
 	return (
-		<IonPage className="login_body">
-			<IonHeader>
-				<IonToolbar color="quinary">
-					<IonTitle className="header__title">
-						Log in
-					</IonTitle>
-				</IonToolbar>
-			</IonHeader>
+		<IonPage className="login__body">
+		
 			<IonContent className="background">
-				<IonImg className="loginscreen_char" src="../../assets/images/background/loginscreen_char.png" />
+				<p id="header__tekst">Van BMI naar Mindfull me</p>
+				<IonImg className="loginscreen__char" src="../../assets/images/background/MyndLogo.png" />
 				<h1 id="login">Login</h1>
-				<IonList id="login_list">
-					<IonItem>
+				<IonList id="login__list">
+					<IonItem lines="none">
 						<IonLabel position="stacked">Emailadres</IonLabel>
-						<IonInput type="text" onIonChange={ ( e: any ) => setEmail( e.target.value ) }></IonInput>
+						<IonInput className="input__login" type="text" onIonChange={ ( e: any ) => setEmail( e.target.value ) }></IonInput>
 					</IonItem>
-					<IonItem>
+					<IonItem lines="none">
 						<IonLabel position="stacked">Wachtwoord</IonLabel>
-						<IonInput type="password" onIonChange={ ( e: any ) => setPassword( e.target.value ) }></IonInput>
+						<IonInput className="input__login" type="password" onIonChange={ ( e: any ) => setPassword( e.target.value ) }></IonInput>
 					</IonItem>
 				</IonList>
 				<p id="registreren">Nog geen account? <Link to="/register">Maak een account aan!</Link></p>
-				<IonButton id="login_button" onClick={ login }>Log in</IonButton>
+				<IonButton id="login__button" color="medium" onClick={ login }>Log in</IonButton>
 			</IonContent>
 		</IonPage>
 	)
