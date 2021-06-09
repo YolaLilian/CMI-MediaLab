@@ -1,5 +1,4 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
 import './Buddy.css';
 
 const Buddy: React.FC = () => {
@@ -16,7 +15,6 @@ const Buddy: React.FC = () => {
             <IonTitle size="large" className="title" >Tab 3</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Find a buddy" />
       </IonContent>
     </IonPage>
   );

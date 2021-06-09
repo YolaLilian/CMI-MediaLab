@@ -3,7 +3,8 @@ import http from "../http-common";
 class RecipeDataService {
 
 	getAll( page=0 ) {
-		return http.get( `/recipes?page=${ page }` );
+		return http.get( `mynd_recipes` );
+		// return http.get( `recipes?page=${ page }` );
 	;}
 
 }

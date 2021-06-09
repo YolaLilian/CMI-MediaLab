@@ -6,7 +6,7 @@ import './Login.css';
 
 import { toast } from '../components/Toast';
 
-import { loginUser } from "../functions";
+import { loginUser, checkLoginStatus, logOut } from "../functions";
 
 const Login: React.FC = () => {
 
@@ -22,6 +22,14 @@ const Login: React.FC = () => {
 		} else {
 			toast("U bent succesvol ingelogd!");
 		};
+		
+		// const res = await checkLoginStatus();
+	}
+	
+	async function logout() {
+		
+		const res = await logOut();
+		
 	}
 
 	return (
@@ -43,6 +51,7 @@ const Login: React.FC = () => {
 				</IonList>
 				<p id="registreren">Nog geen account? <Link to="/register">Maak een account aan!</Link></p>
 				<IonButton id="login__button" color="medium" onClick={ login }>Log in</IonButton>
+				<IonButton id="logout_button" onClick={ logout }>Log uit</IonButton>
 			</IonContent>
 		</IonPage>
 	)
