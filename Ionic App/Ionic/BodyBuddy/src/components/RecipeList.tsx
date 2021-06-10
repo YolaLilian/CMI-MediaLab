@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { IonList, IonItem, IonCard, IonTitle, IonText, IonCardHeader } from '@ionic/react';
+import { IonList, IonItem, IonCard, IonTitle, IonText, IonImg, IonCardHeader } from '@ionic/react';
 
 import RecipeDataService from "../services/recipe";
 
@@ -37,6 +37,7 @@ export const RecipeList = () => {
 				return <React.Fragment key={index}> {
 					<IonItem>
 						<IonCard>
+							<IonImg src={ anObjectMapped[ 'img' ] }></IonImg>
 							<IonTitle className="ion-padding ion-margin">{ anObjectMapped[ 'name' ] }</IonTitle>
 							<IonText>
 								<p className="ion-padding ion-margin">
