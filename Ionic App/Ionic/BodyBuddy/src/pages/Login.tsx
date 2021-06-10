@@ -1,17 +1,21 @@
-import { IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonInput, IonButton, IonLabel, IonList, IonItem, IonImg } from '@ionic/react';
+import React from 'react';
 
-import { useState } from 'react';
-import { Link } from 'react-router-dom'; 
+import { IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonInput, IonButton, IonLabel, IonList, IonItem, IonImg, withIonLifeCycle } from '@ionic/react';
+
+import { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom'; 
 import './Login.css';
 
 import { toast } from '../components/Toast';
 
 import { loginUser, checkLoginStatus, logOut } from "../functions";
+import UIContext from "../MyContext";
 
 const Login: React.FC = () => {
 
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const history = useHistory();
 
 	async function login() {
 
@@ -21,6 +25,7 @@ const Login: React.FC = () => {
 			toast('Login mislukt... Controleer uw gegevens');
 		} else {
 			toast("U bent succesvol ingelogd!");
+			history.push( "/mood" )
 		};
 		
 		// const res = await checkLoginStatus();
@@ -31,6 +36,16 @@ const Login: React.FC = () => {
 		const res = await logOut();
 		
 	}
+
+	const { setShowTabs } = React.useContext( UIContext );
+
+	useEffect( () => {
+		setShowTabs( false );
+
+		return () => {
+			setShowTabs( true );
+		};
+	} );
 
 	return (
 		<IonPage className="login__body">
@@ -57,4 +72,4 @@ const Login: React.FC = () => {
 	)
 }
 
-export default Login;
+export default withIonLifeCycle( Login );
