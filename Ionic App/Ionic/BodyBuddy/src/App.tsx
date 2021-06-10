@@ -1,3 +1,4 @@
+import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
@@ -15,10 +16,12 @@ import { ProtectedRoute } from './components/ProtectedRoute';
 import Recipes from './pages/Recipes'
 import Workouts from './pages/Workouts';
 import User from './pages/User';
-import Buddy from './pages/Buddy';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Mood from './pages/Mood';
+import Coach from './pages/Coach';
+
+import UIContext from "./MyContext";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -42,9 +45,10 @@ import './theme/variables.css';
 import './pages/style.css';
 
 export default function App() {
-  // If we need some JS logic, we can do that here.
-  //If so, we need to change the bracket to a curly bracket and add a return to the ionic components
-// const App: React.FC = () => {
+  
+	const { showTabs } = React.useContext( UIContext );
+
+	let tabbarStyle = showTabs ? undefined : { display: "none" }
 
 	return (
 		<IonApp>
@@ -63,10 +67,10 @@ export default function App() {
 						<ProtectedRoute exact path="/mood" component={Mood}/>
 						<ProtectedRoute exact path="/recipes" component= {Recipes} />
 						<ProtectedRoute exact path="/workouts" component={Workouts} />
-						<ProtectedRoute exact path="/user" component={User}/>
-						<ProtectedRoute exact path="/buddy" component={Buddy}/>
+						<ProtectedRoute exact path="/user" component={User} />
+						<ProtectedRoute exact path="/coach" component={Coach} />
 					</IonRouterOutlet>
-					<IonTabBar color="primary" slot="bottom">
+					<IonTabBar color="primary" slot="bottom" style={ tabbarStyle }>
 						<IonTabButton tab="recipes" href="/recipes">
 							<IonIcon icon={restaurant} />
 						</IonTabButton>
@@ -79,7 +83,7 @@ export default function App() {
 						<IonTabButton tab="user" href="/user">
 							<IonIcon icon={person} />
 						</IonTabButton>
-						<IonTabButton tab="buddy" href="/buddy">
+						<IonTabButton tab="coach" href="/coach">
 							<IonIcon icon={heart} />
 						</IonTabButton>
 					</IonTabBar>
@@ -87,7 +91,4 @@ export default function App() {
 			</IonReactRouter>
 		</IonApp>
 	)
-// );
 };
-
-// export default App;

@@ -1,11 +1,13 @@
+import React from 'react';
 import { IonPage, IonHeader, IonToolbar, IonContent, IonList, IonItem, IonTitle, IonLabel, IonInput, IonButton, IonDatetime } from '@ionic/react';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { toast } from '../components/Toast';
 
 import { handleRegistrationAndLogin } from '../functions';
+import UIContext from "../MyContext";
 
 const Register: React.FC = () => {
 
@@ -29,6 +31,15 @@ const Register: React.FC = () => {
 
 		const res = await handleRegistrationAndLogin( email, password, name, dateOfBirth, residence )
 	}
+
+	const { setShowTabs } = React.useContext( UIContext );
+	useEffect( () => {
+		setShowTabs( false );
+
+		return () => {
+			setShowTabs( true );
+		};
+	} );
 
 	return(
 		<IonPage>
