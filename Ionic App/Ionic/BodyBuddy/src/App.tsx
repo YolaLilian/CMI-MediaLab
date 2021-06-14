@@ -7,6 +7,9 @@ import {
   IonTabBar,
   IonTabButton,
   IonTabs,
+  IonFab, 
+  IonFabButton, 
+  IonFabList,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { restaurant, home, person, heart, barbell } from 'ionicons/icons';

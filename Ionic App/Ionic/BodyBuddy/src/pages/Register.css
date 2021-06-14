@@ -19,3 +19,11 @@
     background-color: #f3a8b3 !important;
     border-radius: 15px;
   }
+
+  #reg__button{
+    margin: 0;
+    margin-top: 5%;
+    padding: 2px;
+    width: 28%;
+    font-family: Como;
+  }

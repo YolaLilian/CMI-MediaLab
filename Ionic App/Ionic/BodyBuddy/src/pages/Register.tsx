@@ -51,42 +51,30 @@ const Register: React.FC = () => {
 				<IonList>
 					<IonItem lines="none">
 						<IonLabel position="stacked">Emailadres</IonLabel>
-					</IonItem>
-					<IonItem>	
 						<IonInput className="input__register" type="text" onIonChange={(e: any) => setEmail(e.target.value)}></IonInput>
 					</IonItem>
 					<IonItem lines="none">
 						<IonLabel position="stacked">Wachtwoord</IonLabel>
-					</IonItem>
-					<IonItem>
 						<IonInput className="input__register" type="password" onIonChange={(e: any) => setPassword(e.target.value)}></IonInput>
 					</IonItem>
 					<IonItem className="ww__Padding" lines="none">
 						<IonLabel position="stacked">Bevestig wachtwoord</IonLabel>
-					</IonItem>
-					<IonItem lines="none">
 						<IonInput className="input__register" type="password" onIonChange={(e: any) => setConfPassword(e.target.value)}></IonInput>
 					</IonItem>
-					<IonItem>
-						<IonLabel position="floating">Uw naam</IonLabel>
-					</IonItem>
-					<IonItem>
-						<IonInput type="text" onIonChange={ ( e:any ) => setName( e.target.value ) }></IonInput>
-					</IonItem>
-					<IonItem>
-						<IonLabel position="floating">Geboortedatum</IonLabel>
-					</IonItem>
-					<IonItem>
-						<IonDatetime displayFormat="DD M YYYY" onIonChange={ ( e:any ) => setDateOfBirth( e.target.value.split( "T" )[0] ) }></IonDatetime>
-					</IonItem>
-					<IonItem>
-						<IonLabel position="floating">Woonplaats</IonLabel>
-					</IonItem>
-					<IonItem>
-						<IonInput type="text" onIonChange={ ( e:any ) => setResidence( e.target.value ) }></IonInput>
+					<IonItem lines="none">
+						<IonLabel position="stacked">Uw naam</IonLabel>
+						<IonInput className="input__register" type="text" onIonChange={ ( e:any ) => setName( e.target.value ) }></IonInput>
 					</IonItem>
 					<IonItem lines="none">
-						<IonButton color="medium" onClick={register}>Registreer!</IonButton>
+						<IonLabel position="stacked">Geboortedatum</IonLabel>
+						<IonDatetime className="input__register" displayFormat="DD M YYYY" onIonChange={ ( e:any ) => setDateOfBirth( e.target.value.split( "T" )[0] ) }></IonDatetime>
+					</IonItem>
+					<IonItem lines="none">
+						<IonLabel position="stacked">Woonplaats</IonLabel>
+						<IonInput className="input__register" type="text" onIonChange={ ( e:any ) => setResidence( e.target.value ) }></IonInput>
+					</IonItem>
+					<IonItem lines="none">
+						<IonButton id="reg__button" color="medium" onClick={register}>Registreer!</IonButton>
 					</IonItem>
 					<p id="registreer">Al een account? <Link to="/login">Log in!</Link></p>
 				</IonList>
