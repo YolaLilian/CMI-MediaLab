@@ -92,6 +92,16 @@ http://ionicframework.com/docs/theming/ */
   --ion-background-color:#ffffff
 }
 
+ion-alert
+{
+ --background: #f3a7b2 !important;
+ --font-family: Como;
+}
+
+.alert__text{
+  color: white;
+}
+
 .ion-color-quaternary {
   --ion-color-base: var(--ion-color-quaternary);
   --ion-color-base-rgb: var(--ion-color-quaternary-rgb);
