@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import { IonList, IonItem, IonCard, IonTitle, IonText, IonImg, IonCardHeader } from '@ionic/react';
+import { IonList, IonItem, IonCard, IonTitle, IonText, IonImg } from '@ionic/react';
+
+import { Link } from 'react-router-dom'; 
 
 import RecipeDataService from "../services/recipe";
 
@@ -26,7 +28,7 @@ export const RecipeList = () => {
 	};
 
 	const recipes = data;
-	// console.log(recipes);
+	console.log(recipes);
 	
 	return <> {
 
@@ -38,12 +40,13 @@ export const RecipeList = () => {
 					<IonItem>
 						<IonCard>
 							<IonImg src={ anObjectMapped[ 'img' ] }></IonImg>
-							<IonTitle className="ion-padding ion-margin">{ anObjectMapped[ 'name' ] }</IonTitle>
-							<IonText>
-								<p className="ion-padding ion-margin">
-									{ anObjectMapped[ 'short' ] }
-								</p>
-							</IonText>
+								<IonTitle className="ion-padding ion-margin"><Link to={ `recipes/${ anObjectMapped['_id'].toString() } `}>{ anObjectMapped[ 'name' ] }</Link></IonTitle>
+								<IonText>
+									<p className="ion-padding ion-margin">
+										{ anObjectMapped[ 'short' ] }
+									</p>
+								</IonText>
+							
 						</IonCard>
 					</IonItem>
 					

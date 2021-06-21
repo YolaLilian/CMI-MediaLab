@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonInput, IonButton, IonLabel, IonList, IonItem, IonImg, withIonLifeCycle } from '@ionic/react';
+import { IonPage, IonContent, IonInput, IonButton, IonLabel, IonList, IonItem, IonImg, withIonLifeCycle } from '@ionic/react';
 
 import { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom'; 
@@ -8,7 +8,7 @@ import './Login.css';
 
 import { toast } from '../components/Toast';
 
-import { loginUser, checkLoginStatus, logOut } from "../functions";
+import { loginUser, logOut } from "../functions";
 import UIContext from "../MyContext";
 
 const Login: React.FC = () => {

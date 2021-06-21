@@ -13,7 +13,8 @@ import { restaurant, home, person, heart, barbell } from 'ionicons/icons';
 
 import { ProtectedRoute } from './components/ProtectedRoute';
 
-import Recipes from './pages/Recipes'
+import Recipes from './pages/Recipes';
+import { Recipe } from './pages/Recipe';
 import Workouts from './pages/Workouts';
 import User from './pages/User';
 import Login from './pages/Login';
@@ -66,6 +67,7 @@ export default function App() {
 						</Route>
 						<ProtectedRoute exact path="/mood" component={Mood}/>
 						<ProtectedRoute exact path="/recipes" component= {Recipes} />
+						<ProtectedRoute exact path="/recipes/:recipeId" component={Recipe} />
 						<ProtectedRoute exact path="/workouts" component={Workouts} />
 						<ProtectedRoute exact path="/user" component={User} />
 						<ProtectedRoute exact path="/coach" component={Coach} />

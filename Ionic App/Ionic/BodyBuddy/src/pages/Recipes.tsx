@@ -1,4 +1,6 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonList, IonItem, IonLabel } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, 
+	// IonButton, IonList, IonItem, IonLabel
+ } from '@ionic/react';
 import './Recipes.css';
 
 import { RecipeList } from '../components/RecipeList';
