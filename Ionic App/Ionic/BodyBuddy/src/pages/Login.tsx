@@ -56,11 +56,11 @@ const Login: React.FC = () => {
 				<h1 id="login">Login</h1>
 				<IonList id="login__list">
 					<IonItem lines="none">
-						<IonLabel position="stacked">Emailadres</IonLabel>
+						<IonLabel className="label__tekst"position="stacked">Emailadres</IonLabel>
 						<IonInput className="input__login" type="text" onIonChange={ ( e: any ) => setEmail( e.target.value ) }></IonInput>
 					</IonItem>
 					<IonItem lines="none">
-						<IonLabel position="stacked">Wachtwoord</IonLabel>
+						<IonLabel className="label__tekst" position="stacked">Wachtwoord</IonLabel>
 						<IonInput className="input__login" type="password" onIonChange={ ( e: any ) => setPassword( e.target.value ) }></IonInput>
 					</IonItem>
 				</IonList>
