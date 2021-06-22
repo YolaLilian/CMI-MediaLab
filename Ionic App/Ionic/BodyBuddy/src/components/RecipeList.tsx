@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { IonList, IonItem, IonCard, IonTitle, IonText, IonImg } from '@ionic/react';
+import { IonList, IonItem, IonCard, IonTitle, IonText, IonImg, IonButton } from '@ionic/react';
 
 import { Link } from 'react-router-dom'; 
 
@@ -15,6 +15,36 @@ export const RecipeList = () => {
 		loadData();
 
 	}, [] );
+
+	const refreshList = () => {
+
+		loadData();
+
+	}
+
+	const find = ( query: string, by: string ) => {
+
+		RecipeDataService.find( query, by )
+		.then( response => {
+			console.log(response.data);
+			setData( response.data.recipes );
+		})
+		.catch( error => {
+			console.log( error );
+		});
+	};
+
+	const findByTagHappy = () => {
+		find ("happy", "tags" );
+	}
+
+	const findByTagNeutral = () => {
+		find ("neutral", "tags" );
+	}
+
+	const findByTagSad = () => {
+		find ("sad", "tags" );
+	}
 
 	const loadData = () => {
 		RecipeDataService.getAll()
@@ -32,7 +62,17 @@ export const RecipeList = () => {
 	
 	return <> {
 
-		<IonList> {
+		<IonList>
+			<IonButton onClick={findByTagHappy}>
+			Happy
+			</IonButton>
+			<IonButton onClick={findByTagNeutral}>
+			Neutral
+			</IonButton>
+			<IonButton onClick={findByTagSad}>
+			Sad
+			</IonButton>
+			 {
 
 			recipes.map( (anObjectMapped: any, index: any) => {
 				// console.log(anObjectMapped);
