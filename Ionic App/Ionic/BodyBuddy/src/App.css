@@ -1,3 +1,9 @@
 .menu__picture{
     width: 50%;
 }
+
+.fab{
+    margin-bottom: 15%;
+    border: 10px solid white;
+    border-radius: 50px;
+}

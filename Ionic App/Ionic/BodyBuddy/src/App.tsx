@@ -1,16 +1,16 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
-  IonApp,
-  IonIcon,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
-  IonImg,
-  IonFab, 
-  IonFabButton, 
-  IonFabList,
+	IonApp,
+	IonIcon,
+	IonRouterOutlet,
+	IonTabBar,
+	IonTabButton,
+	IonTabs,
+	IonImg,
+	IonFab,
+	IonFabButton,
+	IonFabList,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { restaurant, home, person, heart, barbell } from 'ionicons/icons';
@@ -51,8 +51,8 @@ import './theme/variables.css';
 import './pages/style.css';
 
 export default function App() {
-  
-	const { showTabs } = React.useContext( UIContext );
+
+	const { showTabs } = React.useContext(UIContext);
 
 	let tabbarStyle = showTabs ? undefined : { display: "none" }
 
@@ -70,13 +70,13 @@ export default function App() {
 						<Route exact path="/login">
 							<Login />
 						</Route>
-						<ProtectedRoute exact path="/mood" component={Mood}/>
-						<ProtectedRoute exact path="/recipes" component= {Recipes} />
+						<ProtectedRoute exact path="/mood" component={Mood} />
+						<ProtectedRoute exact path="/recipes" component={Recipes} />
 						<ProtectedRoute exact path="/workouts" component={Workouts} />
 						<ProtectedRoute exact path="/user" component={User} />
 						<ProtectedRoute exact path="/coach" component={Coach} />
 					</IonRouterOutlet>
-					<IonTabBar color="primary" slot="bottom" style={ tabbarStyle }>
+					<IonTabBar color="primary" slot="bottom" style={tabbarStyle}>
 						<IonTabButton tab="recipes" href="/recipes">
 							<IonIcon icon={restaurant} />
 						</IonTabButton>
@@ -84,7 +84,7 @@ export default function App() {
 							<IonIcon icon={barbell} />
 						</IonTabButton>
 						<IonTabButton tab="mood" href="/mood">
-							<IonIcon icon={home} />
+							{/* <IonIcon icon={home} /> */}
 						</IonTabButton>
 						<IonTabButton tab="coach" href="/coach">
 							<IonIcon icon={person} />
@@ -95,6 +95,11 @@ export default function App() {
 						</IonTabButton>
 					</IonTabBar>
 				</IonTabs>
+				<IonFab className="fab" vertical="bottom" horizontal="center" edge slot="fixed">
+					<IonFabButton href="/mood">
+					<IonIcon icon={home} />
+					</IonFabButton>
+				</IonFab>
 			</IonReactRouter>
 		</IonApp>
 	)

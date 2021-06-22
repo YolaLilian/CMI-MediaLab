@@ -76,5 +76,32 @@
 }
 
 .label__tekst{
-  font-family: Como;
+  font-family: Como !important;
+  color: blue !important;
+  align-items: center !important;
+}
+
+.food__card{
+  /* --background-color: yellow !important; */
+  background-color: #fceed5 !important;
+  border-radius: 20px;
+}
+
+.food__title{
+  color: #f7cc7c !important;
+  padding-bottom: 10px;
+  font-size: medium;
+  margin-left: 20px;
+}
+
+.food__content{
+  color: #f7cc7c !important;
+  padding-bottom: 10px;
+  font-size: small;
+  margin-left: 20px;
+}
+
+.food__header{
+  padding-bottom: 1px;
+  padding-top: 5px;
 }
