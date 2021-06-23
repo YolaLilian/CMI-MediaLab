@@ -97,7 +97,7 @@ export default function App() {
 						</IonTabButton>
 					</IonTabBar>
 				</IonTabs>
-				<IonFab className="fab" vertical="bottom" horizontal="center" edge slot="fixed">
+				<IonFab className="fab" vertical="bottom" slot="fixed">
 					<IonFabButton href="/mood">
 					<IonIcon icon={home} />
 					</IonFabButton>

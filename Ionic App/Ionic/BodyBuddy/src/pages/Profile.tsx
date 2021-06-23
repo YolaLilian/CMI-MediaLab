@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IonCardContent, IonCardTitle, IonCardSubtitle, IonCardHeader, IonCard, IonButton, IonFab, IonFabButton, IonImg, IonIcon, IonContent, IonList, IonItem, IonLabel, IonPage, IonHeader, IonAlert, IonToolbar, IonTitle, IonGrid, IonRow, IonCol } from "@ionic/react";
 
 import { restaurant, home, person, heart, barbell, settings } from 'ionicons/icons';
@@ -6,15 +6,75 @@ import { restaurant, home, person, heart, barbell, settings } from 'ionicons/ico
 import { logOut } from "../functions";
 import './Profile.css';
 
+import RecipeDataService from "../services/recipe";
+
 const User: React.FC = () => {
 
   const [showAlert, setShowAlert] = useState(true);
 
   async function click() {
-		
-		console.log('geklikt')
-		
-	}
+
+    console.log('geklikt')
+
+  }
+
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+
+  //   loadData();
+
+  // }, []);
+
+  // const refreshList = () => {
+
+  //   loadData();
+
+  // }
+
+  // const find = (query: string, by: string) => {
+
+  //   RecipeDataService.find(query, by)
+  //     .then(response => {
+  //       console.log(response.data);
+  //       setData(response.data.recipes);
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     });
+  // };
+
+  const findByTagHappy = () => {
+    // find("happy", "tags");
+    sessionStorage.clear();
+    sessionStorage.setItem("mood", "happy");
+  }
+  
+  const findByTagNeutral = () => {
+    // find("neutral", "tags");
+    sessionStorage.clear();
+    sessionStorage.setItem("mood", "neutral");
+  }
+
+  const findByTagSad = () => {
+    // find("sad", "tags");
+    sessionStorage.clear();
+    sessionStorage.setItem("mood", "sad");
+  }
+
+  // const loadData = () => {
+  //   RecipeDataService.getAll()
+  //     .then((response: { data: { recipes: React.SetStateAction<never[]>; }; }) => {
+  //       // console.log( response.data );
+  //       setData(response.data.recipes);
+  //     })
+  //     .catch((error: any) => {
+  //       console.log(error);
+  //     });
+  // };
+
+  // const recipes = data;
+  // console.log(recipes);
 
   return (
     <IonPage>
@@ -73,11 +133,13 @@ const User: React.FC = () => {
 
                 if (data == 'Boos') {
                   // console.log("Je voelt je boos")
-                  
+                  findByTagSad()
                 } else if (data == 'Blij') {
-                  console.log("Je bent nu blij")
-                } else if (data == 'Stabiel'){
-                  console.log("Je voelt je stabiel")
+                  // console.log("Je bent nu blij")
+                  findByTagHappy()
+                } else if (data == 'Stabiel') {
+                  // console.log("Je voelt je stabiel")
+                  findByTagNeutral()
                 }
               }
             }
@@ -97,9 +159,9 @@ const User: React.FC = () => {
         <p className="input__text">2 maanden</p>
         <p className="sub__head">Mynd. Coach</p>
         <p className="input__text">Sabine Verhoeff</p> <br></br>
-        <div className="dot__yellow" onClick={ click }></div>
-        <div className="dot__pink" onClick={ click }></div>
-        <div className="dot__purple" onClick={ click }></div>
+        <div className="dot__yellow" onClick={click}></div>
+        <div className="dot__pink" onClick={click}></div>
+        <div className="dot__purple" onClick={click}></div>
         <IonCard className="food__card" onClick={click}>
           <IonImg className="food__img" src="../../assets/images/background/potloodje.png" />
           <IonCardHeader className="food__header">
