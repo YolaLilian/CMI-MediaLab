@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonPage, IonHeader, IonToolbar, IonContent, IonList, IonItem, IonTitle, IonLabel, IonInput, IonButton, IonDatetime, IonImg } from '@ionic/react';
+import { IonPage, IonContent, IonList, IonItem, IonInput, IonButton, IonDatetime, IonImg } from '@ionic/react';
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';

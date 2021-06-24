@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { IonCardContent, IonCardTitle, IonCardSubtitle, IonCardHeader, IonCard, IonButton, IonFab, IonFabButton, IonImg, IonIcon, IonContent, IonList, IonItem, IonLabel, IonPage, IonHeader, IonAlert, IonToolbar, IonTitle, IonGrid, IonRow, IonCol } from "@ionic/react";
+import React, { useState } from 'react';
+import { IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonButton, IonFab, IonFabButton, IonImg, IonIcon, IonContent, IonList, IonPage, IonHeader, IonAlert, IonToolbar, IonTitle } from "@ionic/react";
 
-import { restaurant, home, person, heart, barbell, settings } from 'ionicons/icons';
+import { settings } from 'ionicons/icons';
 
-import { logOut } from "../functions";
 import './Profile.css';
-
-import RecipeDataService from "../services/recipe";
 
 const User: React.FC = () => {
 
@@ -86,15 +83,15 @@ const User: React.FC = () => {
               handler: (data) => {
                 console.log('Confirm Ok', data);
 
-                if (data == 'Boos') {
+                if (data === 'Boos') {
                   // console.log("Je voelt je boos")
                   findByTagSad()
                   window.location.reload(false);
-                } else if (data == 'Blij') {
+                } else if (data === 'Blij') {
                   // console.log("Je bent nu blij")
                   findByTagHappy()
                   window.location.reload(false);
-                } else if (data == 'Stabiel') {
+                } else if (data === 'Stabiel') {
                   // console.log("Je voelt je stabiel")
                   findByTagNeutral()
                   window.location.reload(false);
