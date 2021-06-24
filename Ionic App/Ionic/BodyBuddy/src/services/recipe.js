@@ -9,7 +9,7 @@ class RecipeDataService {
 
 	find(query, by="name") { 
 		return http.get(`mynd_recipes_getAll?${by}=${query}`);
-	  } 
+	} 
 
 	getRecipe( id ) {
 		const recipeID = Object.values(id);

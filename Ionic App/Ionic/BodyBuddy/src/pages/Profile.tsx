@@ -14,19 +14,16 @@ const User: React.FC = () => {
   }
 
   const findByTagHappy = () => {
-    // find("happy", "tags");
     sessionStorage.clear();
     sessionStorage.setItem("mood", "happy");
   }
   
   const findByTagNeutral = () => {
-    // find("neutral", "tags");
     sessionStorage.clear();
     sessionStorage.setItem("mood", "neutral");
   }
 
   const findByTagSad = () => {
-    // find("sad", "tags");
     sessionStorage.clear();
     sessionStorage.setItem("mood", "sad");
   }
@@ -84,15 +81,12 @@ const User: React.FC = () => {
                 console.log('Confirm Ok', data);
 
                 if (data === 'Boos') {
-                  // console.log("Je voelt je boos")
                   findByTagSad()
                   window.location.reload(false);
                 } else if (data === 'Blij') {
-                  // console.log("Je bent nu blij")
                   findByTagHappy()
                   window.location.reload(false);
                 } else if (data === 'Stabiel') {
-                  // console.log("Je voelt je stabiel")
                   findByTagNeutral()
                   window.location.reload(false);
                 }
