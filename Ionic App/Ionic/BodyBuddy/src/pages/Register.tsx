@@ -45,39 +45,38 @@ const Register: React.FC = () => {
 
 	return(
 		<IonPage>
-			<IonContent>
+			<IonContent className="reg__body">
 				<p id="header__tekst">Van BMI naar Mindfull me</p>
 				<IonImg className="regscreen__char" src="../../assets/images/background/MyndLogo.png" />
+				<h1 id="login">Registreren</h1>
 				<IonList>
 					<IonItem lines="none">
-						<IonLabel position="stacked">Emailadres</IonLabel>
-						<IonInput className="input__register" type="text" onIonChange={(e: any) => setEmail(e.target.value)}></IonInput>
+						{/* <IonLabel position="stacked">Emailadres</IonLabel> */}
+						<IonInput className="input__register" placeholder="Email" type="text" onIonChange={(e: any) => setEmail(e.target.value)}></IonInput>
 					</IonItem>
 					<IonItem lines="none">
-						<IonLabel position="stacked">Wachtwoord</IonLabel>
-						<IonInput className="input__register" type="password" onIonChange={(e: any) => setPassword(e.target.value)}></IonInput>
+						{/* <IonLabel position="stacked">Wachtwoord</IonLabel> */}
+						<IonInput className="input__register" placeholder="Wachtwoord" type="password" onIonChange={(e: any) => setPassword(e.target.value)}></IonInput>
 					</IonItem>
 					<IonItem className="ww__Padding" lines="none">
-						<IonLabel position="stacked">Bevestig wachtwoord</IonLabel>
-						<IonInput className="input__register" type="password" onIonChange={(e: any) => setConfPassword(e.target.value)}></IonInput>
+						{/* <IonLabel position="stacked">Bevestig wachtwoord</IonLabel> */}
+						<IonInput className="input__register" placeholder="Bevestig Wachtwoord" type="password" onIonChange={(e: any) => setConfPassword(e.target.value)}></IonInput>
 					</IonItem>
 					<IonItem lines="none">
-						<IonLabel position="stacked">Uw naam</IonLabel>
-						<IonInput className="input__register" type="text" onIonChange={ ( e:any ) => setName( e.target.value ) }></IonInput>
+						{/* <IonLabel position="stacked">Uw naam</IonLabel> */}
+						<IonInput className="input__register" placeholder="Uw naam" type="text" onIonChange={ ( e:any ) => setName( e.target.value ) }></IonInput>
 					</IonItem>
 					<IonItem lines="none">
-						<IonLabel position="stacked">Geboortedatum</IonLabel>
-						<IonDatetime className="input__register" displayFormat="DD M YYYY" onIonChange={ ( e:any ) => setDateOfBirth( e.target.value.split( "T" )[0] ) }></IonDatetime>
+						{/* <IonLabel position="stacked">Geboortedatum</IonLabel> */}
+						<IonDatetime className="input__register" placeholder="Geboortedatum" displayFormat="DD M YYYY" onIonChange={ ( e:any ) => setDateOfBirth( e.target.value.split( "T" )[0] ) }></IonDatetime>
 					</IonItem>
 					<IonItem lines="none">
-						<IonLabel position="stacked">Woonplaats</IonLabel>
-						<IonInput className="input__register" type="text" onIonChange={ ( e:any ) => setResidence( e.target.value ) }></IonInput>
+						{/* <IonLabel position="stacked">Woonplaats</IonLabel> */}
+						<IonInput className="input__register" placeholder="Woonplaats" type="text" onIonChange={ ( e:any ) => setResidence( e.target.value ) }></IonInput>
 					</IonItem>
-					<IonItem lines="none">
-						<IonButton id="reg__button" color="medium" onClick={register}>Registreer!</IonButton>
-					</IonItem>
-					<p id="registreer">Al een account? <Link to="/login">Log in!</Link></p>
 				</IonList>
+				<IonButton id="reg__button" color="medium" onClick={register}>Registreer!</IonButton>
+				<p id="registreer">Al een account? <Link to="/login">Log in!</Link></p>
 			</IonContent>
 		</IonPage>
 	)

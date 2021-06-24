@@ -1,0 +1,23 @@
+.recipe__link{
+    font-family: Como;
+    color: #f8cc7d;
+    margin: 0;
+    padding: 0;
+    margin-left: 1.2%;
+    font-style: bold !important;
+}
+
+.recipe__text{
+    color: #f8cc7d;
+    margin: 0;
+    margin-left: 2%; 
+    margin-bottom: 1%;
+}
+
+/* .recipe__img{
+    border-radius: 20% 20% 0% 0% !important;
+}
+
+.image{
+    border-radius: 0% 0% 20% 20% !important;
+} */

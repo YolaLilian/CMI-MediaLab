@@ -10,39 +10,11 @@ import RecipeDataService from "../services/recipe";
 
 const User: React.FC = () => {
 
-  const [showAlert, setShowAlert] = useState(true);
+  const [showAlert, setShowAlert] = useState(false);
 
   async function click() {
-
     console.log('geklikt')
-
   }
-
-  // const [data, setData] = useState([]);
-
-  // useEffect(() => {
-
-  //   loadData();
-
-  // }, []);
-
-  // const refreshList = () => {
-
-  //   loadData();
-
-  // }
-
-  // const find = (query: string, by: string) => {
-
-  //   RecipeDataService.find(query, by)
-  //     .then(response => {
-  //       console.log(response.data);
-  //       setData(response.data.recipes);
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     });
-  // };
 
   const findByTagHappy = () => {
     // find("happy", "tags");
@@ -62,20 +34,6 @@ const User: React.FC = () => {
     sessionStorage.setItem("mood", "sad");
   }
 
-  // const loadData = () => {
-  //   RecipeDataService.getAll()
-  //     .then((response: { data: { recipes: React.SetStateAction<never[]>; }; }) => {
-  //       // console.log( response.data );
-  //       setData(response.data.recipes);
-  //     })
-  //     .catch((error: any) => {
-  //       console.log(error);
-  //     });
-  // };
-
-  // const recipes = data;
-  // console.log(recipes);
-
   return (
     <IonPage>
       <IonHeader>
@@ -86,9 +44,6 @@ const User: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="profile__content">
-        {/* <IonFab vertical="bottom" horizontal="center" slot="fixed">
-          <IonFabButton>Button</IonFabButton>
-        </IonFab> */}
         <IonAlert
           isOpen={showAlert}
           onDidDismiss={() => setShowAlert(false)}
@@ -134,12 +89,15 @@ const User: React.FC = () => {
                 if (data == 'Boos') {
                   // console.log("Je voelt je boos")
                   findByTagSad()
+                  window.location.reload(false);
                 } else if (data == 'Blij') {
                   // console.log("Je bent nu blij")
                   findByTagHappy()
+                  window.location.reload(false);
                 } else if (data == 'Stabiel') {
                   // console.log("Je voelt je stabiel")
                   findByTagNeutral()
+                  window.location.reload(false);
                 }
               }
             }
@@ -157,11 +115,11 @@ const User: React.FC = () => {
         <p className="input__text">25 jaar</p>
         <p className="sub__head">Mynd. Member sinds</p>
         <p className="input__text">2 maanden</p>
-        <p className="sub__head">Mynd. Coach</p>
-        <p className="input__text">Sabine Verhoeff</p> <br></br>
+        <IonButton className="profile__button" onClick={() => setShowAlert(true)} expand="block">Mood</IonButton>
         <div className="dot__yellow" onClick={click}></div>
         <div className="dot__pink" onClick={click}></div>
         <div className="dot__purple" onClick={click}></div>
+        <IonList id="voeding_list">
         <IonCard className="food__card" onClick={click}>
           <IonImg className="food__img" src="../../assets/images/background/potloodje.png" />
           <IonCardHeader className="food__header">
@@ -189,7 +147,7 @@ const User: React.FC = () => {
             2 speltcrackers met kipfilet
       </IonCardContent>
         </IonCard>
-
+        </IonList>
       </IonContent>
     </IonPage>
   )

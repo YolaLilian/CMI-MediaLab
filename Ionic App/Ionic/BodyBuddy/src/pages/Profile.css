@@ -25,12 +25,12 @@
     border-radius: 50%;
     display: inline-block;
     margin-right: 20%;
-    margin-top: 10%;
+    margin-top: 8%;
     margin-left: 20%;
+    margin-bottom: 4%;
     /* animation-name: example;
     animation-duration: 4s; */
 }
-
 .dot__pink {
     height: 25px;
     width: 25px;
@@ -38,6 +38,7 @@
     border: 5px solid #fadadc;
     border-radius: 50%;
     display: inline-block;
+    margin-bottom: 4%;
 }
 
 .dot__purple {
@@ -48,6 +49,7 @@
     border-radius: 50%;
     display: inline-block;
     margin-left: 20%;
+    margin-bottom: 4%;
 }
 
 .profile__content h1{
@@ -96,4 +98,18 @@
     margin-top: 7px;
     margin-left: 10px;
     margin-right: 20px;
+}
+
+.food__card{
+    margin-top: 5%;
+}
+
+#voeding_list{
+    visibility: visible;
+}
+
+.profile__button{
+    visibility: visible;
+    display: inline-flex;
+    margin-top: 2px;
 }

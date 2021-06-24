@@ -1,3 +1,7 @@
+.reg__body{
+  background-color: #faf2ea !important;
+}
+
 .regscreen__char{
     width: 60%;
     margin-left: 20%;
@@ -12,7 +16,8 @@
     margin: 0;
     margin-bottom: 3px;
     padding-bottom: 15px;
-    padding-left: 17%;
+    padding-left: 27%;
+    margin-top: 5%;
   }
  
   .input__register{
@@ -22,8 +27,16 @@
 
   #reg__button{
     margin: 0;
+    margin-left: 32%;
     margin-top: 5%;
-    padding: 2px;
-    width: 28%;
+    padding: 1px;
+    width: 30%;
     font-family: Como;
+  }
+
+  .login{
+    margin: 0;
+    font-family: Como;
+    margin-left: 10%;
+    color: #4c408a; 
   }

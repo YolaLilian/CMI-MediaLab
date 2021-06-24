@@ -49,7 +49,6 @@ const Login: React.FC = () => {
 
 	return (
 		<IonPage className="login__body">
-		
 			<IonContent className="background">
 				<p id="header__tekst">Van BMI naar Mindfull me</p>
 				<IonImg className="loginscreen__char" src="../../assets/images/background/MyndLogo.png" />
@@ -64,9 +63,9 @@ const Login: React.FC = () => {
 						<IonInput className="input__login" placeholder="Wachtwoord" type="password" onIonChange={ ( e: any ) => setPassword( e.target.value ) }></IonInput>
 					</IonItem>
 				</IonList>
-				<p id="registreren">Nog geen account? <Link to="/register">Maak een account aan!</Link></p>
 				<IonButton id="login__button" color="medium" onClick={ login }>Log in</IonButton>
 				<IonButton id="logout_button" onClick={ logout }>Log uit</IonButton>
+				<p id="registreren">Nog geen account? <Link to="/register">Maak een account aan!</Link></p>
 			</IonContent>
 		</IonPage>
 	)

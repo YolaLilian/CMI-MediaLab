@@ -12,7 +12,7 @@ const Coach: React.FC = () => {
           <IonTitle className="header__title">Coach</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent className="mood__background" fullscreen>
       </IonContent>
     </IonPage>
   );

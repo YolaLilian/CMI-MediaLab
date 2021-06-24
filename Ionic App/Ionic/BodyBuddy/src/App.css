@@ -3,8 +3,21 @@
 }
 
 .fab{
+    --background: purple !important;
     margin-bottom: 4%;
     margin-left: 39%;
-    border:10px solid white;
+    /* color: purple; */
+    /* border:10px solid white; */
     border-radius:50%;
+    border:10px solid transparent;
+    border-bottom-color:#fff;
+    border:10px solid transparent;
+    border-radius:50%;
+    border-bottom-color:#fff;
+    border-right-color:#fff;
+    transform: rotate(45deg);
+}
+
+.profile__icon{
+    transform: rotate(315deg);
 }

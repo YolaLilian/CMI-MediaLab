@@ -97,9 +97,9 @@ export default function App() {
 						</IonTabButton>
 					</IonTabBar>
 				</IonTabs>
-				<IonFab className="fab" vertical="bottom" slot="fixed">
+				<IonFab className="fab" vertical="bottom" slot="fixed" style={tabbarStyle}>
 					<IonFabButton href="/mood">
-					<IonIcon icon={home} />
+					<IonIcon className="profile__icon" icon={home} />
 					</IonFabButton>
 				</IonFab>
 			</IonReactRouter>
