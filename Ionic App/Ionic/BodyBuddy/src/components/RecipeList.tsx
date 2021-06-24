@@ -19,26 +19,19 @@ export const RecipeList = () => {
 	const loadData = () => {
 		RecipeDataService.getAll()
 		.then( ( response: { data: { recipes: React.SetStateAction<never[]>; }; } ) => {
-			// console.log( response.data );
 			setData( response.data.recipes );
 		} )
 		.catch ( ( error: any) => {
 			console.log( error );
 		} );
 	};
-
-	// const refreshData = () => {
-	// 	loadData();
-	// };
 	
 	const recipes = data;
-	// console.log(recipes);
 	
 	const find = (query: string, by: string) => {
 
 		RecipeDataService.find(query, by)
 			.then(response => {
-				console.log(response.data);
 				setData(response.data.recipes);
 			})
 			.catch(error => {
@@ -49,16 +42,10 @@ export const RecipeList = () => {
 	const findMood = () => {
 		if (sessionStorage.mood === "happy") {
 			find("happy", "tags");
-			// refreshData();
-			console.log('ik kom aan bij happy!!!')
 		} else if (sessionStorage.mood === "neutral") {
 			find("neutral", "tags");
-			// refreshData();
-			console.log('ik kom aan bij neutral!!!')
 		} else if (sessionStorage.mood === "sad") {
 			find("sad", "tags");
-			// refreshData();
-			console.log('ik kom aan bij sad!!!')
 		} else if (sessionStorage.length === 0) {
 			loadData();
 		}
@@ -66,17 +53,14 @@ export const RecipeList = () => {
 
 	const clearFilter = () => {
 		sessionStorage.clear();
-		console.log(sessionStorage.length === 0)
 		findMood();
 	}
 	
 	return <> {
-
 		<IonList> 
-			<IonButton onClick={clearFilter}>Verwijder filter</IonButton>
+			<IonButton onClick={clearFilter}>Alle recepten</IonButton>
 			{
 			recipes.map((anObjectMapped: any, index: any) => {
-				// console.log(anObjectMapped);
 				return <React.Fragment key={index}> {
 					<IonItem>
 						<IonCard>
@@ -87,16 +71,10 @@ export const RecipeList = () => {
 										{ anObjectMapped[ 'short' ] }
 									</p>
 								</IonText>
-							
 						</IonCard>
 					</IonItem>
-					
 				} </React.Fragment>
-		
 			})
-
 		} </IonList>
-
 	} </>
-
 }

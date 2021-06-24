@@ -9,17 +9,21 @@ export const Recipe = (props: any) => {
 	const [ data, setData ] = useState<any>( {} );
 	let recipeID = useParams();
 	const recipe = data;
-	const recipeDetails = recipe.recipe_details;
-	const ingredients = recipe.recipe_details.ingredients;
+	// const recipeDetails = recipe.recipe_details;
+	// const ingredients = recipe.recipe_details.ingredients;
 
-	const ingredientsArray: any = [];
-	Object.keys( ingredients ).forEach( key => ingredientsArray.push ( {
-		ingredient: key,
-		item: ingredients[key]
-	}));
-	console.log(ingredientsArray);
+	// const ingredientsArray: any = [];
+	// Object.keys( ingredients ).forEach( key => ingredientsArray.push ( {
+	// 	ingredient: key,
+	// 	item: ingredients[key]
+	// }));
+	// console.log(ingredientsArray);
 
 	useEffect ( () => {
+		getRecipe();
+	}, [ ] );
+
+	const getRecipe = () => {
 		RecipeDataService.getRecipe( recipeID )
 		.then( ( response: { data: React.SetStateAction<never[]>; } ) => {
 			setData ( response.data );
@@ -27,7 +31,7 @@ export const Recipe = (props: any) => {
 		.catch( ( error: any ) => {
 			console.log( error );
 		} );
-	}, [ recipeID ] );
+	}
 
 	return <> (
 		<IonPage>
@@ -68,7 +72,7 @@ export const Recipe = (props: any) => {
 						<IonTitle>
 							<h3>Ingrediënten</h3>
 						</IonTitle>
-						<IonList>
+						{/* <IonList>
 							{ ingredientsArray.map( (ingredient: any, index: any) => {
 								return <React.Fragment key={index}> {
 									<IonItem>
@@ -81,7 +85,7 @@ export const Recipe = (props: any) => {
 									</IonItem>	
 								} </React.Fragment>
 							} ) }
-						</IonList>
+						</IonList> */}
 					</IonItem>
 					{/*<IonItem>
 						<IonTitle>
