@@ -63,7 +63,9 @@ export const RecipeList = () => {
 	}
 
 	return <> {
-		<IonList> {
+		<IonList>
+			<IonButton onClick={clearFilter}>Alle recepten</IonButton> 
+			 {
 			recipes.map((anObjectMapped: any, index: any) => {
 				// console.log(anObjectMapped);
 				return <React.Fragment key={index}> {
