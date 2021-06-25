@@ -6,7 +6,6 @@ import RecipeDataService from "../services/recipe";
 
 import { RecipeDetails } from '../components/RecipeDetails';
 
-
 export const Recipe = (props: any) => {
 	
 	const [ recipe, setRecipe ] = useState<any>( null );

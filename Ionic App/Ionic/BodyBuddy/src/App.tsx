@@ -20,6 +20,7 @@ import Home from './pages/Home';
 import Recipes from './pages/Recipes';
 import { Recipe } from './pages/Recipe';
 import Workouts from './pages/Workouts';
+import { Workout } from './pages/Workout';
 import User from './pages/Profile';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -75,6 +76,7 @@ export default function App() {
 						<ProtectedRoute exact path="/recipes" component= {Recipes} />
 						<ProtectedRoute exact path="/recipes/:recipeId" component={Recipe} />
 						<ProtectedRoute exact path="/workouts" component={Workouts} />
+						<ProtectedRoute exact path="/workouts/:workoutId" component={Workout} />
 						<ProtectedRoute exact path="/user" component={User} />
 					</IonRouterOutlet>
 					<IonTabBar color="primary" slot="bottom" style={tabbarStyle}>
