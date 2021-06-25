@@ -1,31 +1,34 @@
-import React, { useState } from 'react';
-import { IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonButton, IonFab, IonFabButton, IonImg, IonIcon, IonContent, IonList, IonPage, IonHeader, IonAlert, IonToolbar, IonTitle } from "@ionic/react";
+import React, { useState, useEffect } from 'react';
+import { IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonImg, IonContent, IonList, IonPage, IonHeader, IonToolbar, IonTitle } from "@ionic/react";
 
-import { settings } from 'ionicons/icons';
+import UserDataService from "../services/user"; 
+import { getUserID } from '../functions';
+import { ProfileInfo } from '../components/ProfileInfo';
+
 
 import './Profile.css';
 
 const User: React.FC = () => {
 
-  const [showAlert, setShowAlert] = useState(false);
+  const [ user, setUser] = useState<any>(null)
 
   async function click() {
     console.log('geklikt')
   }
 
-  const findByTagHappy = () => {
-    sessionStorage.clear();
-    sessionStorage.setItem("mood", "happy");
-  }
-  
-  const findByTagNeutral = () => {
-    sessionStorage.clear();
-    sessionStorage.setItem("mood", "neutral");
-  }
+    useEffect( () => {
+	  getUserInfo();
+	  
+  }, []);
 
-  const findByTagSad = () => {
-    sessionStorage.clear();
-    sessionStorage.setItem("mood", "sad");
+  const getUserInfo = () => {
+	  const userID = getUserID();
+	  console.log(userID);
+	  UserDataService.getUser( userID )
+	  .then ( ( response: {data: React.SetStateAction<never[]>; } ) => {
+		  setUser( response.data );
+		  console.log(response.data)
+	  })
   }
 
   return (
@@ -34,79 +37,12 @@ const User: React.FC = () => {
         <IonToolbar color="quinary">
           <IonTitle className="header__title">
             Profiel
-					</IonTitle>
+		  </IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="profile__content">
-        <IonAlert
-          isOpen={showAlert}
-          onDidDismiss={() => setShowAlert(false)}
-          header={'Hoe voel je je vandaag?'}
-          inputs={[
-            {
-              name: 'blij',
-              cssClass: 'alert__text',
-              type: 'radio',
-              label: 'Blij',
-              value: 'Blij',
-            },
-            {
-              name: 'stabiel',
-              cssClass: 'alert__text',
-              type: 'radio',
-              label: 'Stabiel',
-              value: 'Stabiel',
-            },
-            {
-              name: 'boos',
-              cssClass: 'alert__text',
-              type: 'radio',
-              label: 'Boos',
-              value: 'Boos',
-            }
-          ]}
-          buttons={[
-            {
-              text: 'Cancel',
-              role: 'cancel',
-              cssClass: 'secondary',
-              handler: () => {
-                console.log('Confirm Cancel');
-              }
-            },
-            {
-              text: 'Ok',
-              cssClass: 'secondary',
-              handler: (data) => {
-                console.log('Confirm Ok', data);
-
-                if (data === 'Boos') {
-                  findByTagSad()
-                  window.location.reload(false);
-                } else if (data === 'Blij') {
-                  findByTagHappy()
-                  window.location.reload(false);
-                } else if (data === 'Stabiel') {
-                  findByTagNeutral()
-                  window.location.reload(false);
-                }
-              }
-            }
-          ]}
-        />
-
-        <IonFab vertical="top" horizontal="end" slot="fixed">
-          <IonFabButton className="profile__options">
-            <IonIcon className="set__icon" icon={settings} />
-          </IonFabButton>
-        </IonFab>
-        <h1 className="profiel__header">Merve Adina</h1>
-        <IonImg className="profielfoto" src="../../assets/images/background/Profielfoto.png" />
-        <p className="sub__head">Leeftijd</p>
-        <p className="input__text">25 jaar</p>
-        <p className="sub__head">Mynd. Member sinds</p>
-        <p className="input__text">2 maanden</p>
-        <IonButton className="profile__button" onClick={() => setShowAlert(true)} expand="block">Mood</IonButton>
+        
+		{ user && <ProfileInfo info= { user } /> }
         <div className="dot__yellow" onClick={click}></div>
         <div className="dot__pink" onClick={click}></div>
         <div className="dot__purple" onClick={click}></div>

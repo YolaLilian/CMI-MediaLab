@@ -81,3 +81,10 @@ export async function logOut() {
 	}
 
 }
+
+export function getUserID() {
+
+	const userId = app.currentUser.id;
+	console.log(app.currentUser.id);
+	return userId;
+}

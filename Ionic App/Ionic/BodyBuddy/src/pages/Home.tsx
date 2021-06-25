@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle } from "@ionic/react";
 
-import { useHistory } from 'react-router-dom'; 
+import { useHistory } from 'react-router-dom';
+
+import UIContext from "../MyContext";
 
 import { logOut } from "../functions";
 
 const Home: React.FC = () => {
+
+	const { setShowTabs } = React.useContext( UIContext );
 
 	const history = useHistory();
 
@@ -17,6 +21,14 @@ const Home: React.FC = () => {
 		history.push("/login");
 		
 	}
+
+	useEffect( () => {
+		setShowTabs( true );
+
+		return () => {
+			setShowTabs( false );
+		};
+	} );
 	
 	return(
 		<IonPage>
