@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle } from "@ionic/react";
+import { IonButton, IonContent, IonImg, IonPage, IonHeader, IonToolbar, IonTitle } from "@ionic/react";
 
 import { useHistory } from 'react-router-dom';
 
@@ -32,12 +32,13 @@ const Home: React.FC = () => {
 	
 	return(
 		<IonPage>
-			<IonHeader>
+			{/* <IonHeader>
 				<IonToolbar color="quinary">
 				<IonTitle className="header__title">For Me</IonTitle>
 				</IonToolbar>
-			</IonHeader>
+			</IonHeader> */}
 			<IonContent>
+			<IonImg className="mood__img" src="../../assets/images/background/forme_lang.png" />
 			<IonButton id="logout_button" onClick={ logout } >Log uit</IonButton>				
 			</IonContent>
 		</IonPage>

@@ -18,16 +18,16 @@ export const RecipeList = () => {
 
 	const loadData = () => {
 		RecipeDataService.getAll()
-		.then( ( response: { data: { recipes: React.SetStateAction<never[]>; }; } ) => {
-			setData( response.data.recipes );
-		} )
-		.catch ( ( error: any) => {
-			console.log( error );
-		} );
+			.then((response: { data: { recipes: React.SetStateAction<never[]>; }; }) => {
+				setData(response.data.recipes);
+			})
+			.catch((error: any) => {
+				console.log(error);
+			});
 	};
-	
+
 	const recipes = data;
-	
+
 	const find = (query: string, by: string) => {
 
 		RecipeDataService.find(query, by)
@@ -55,26 +55,27 @@ export const RecipeList = () => {
 		sessionStorage.clear();
 		findMood();
 	}
-	
+
 	return <> {
-		<IonList> 
-			<IonButton onClick={clearFilter}>Alle recepten</IonButton>
+		<IonList>
 			{
-			recipes.map((anObjectMapped: any, index: any) => {
-				return <React.Fragment key={index}> {
-					<IonItem lines="none">
-						<IonCard className="recipe__img">
-							<IonImg className="image" src={ anObjectMapped[ 'img' ] }></IonImg>
-								<IonTitle className="recipe__link"><Link to={ `recipes/${ anObjectMapped['_id'].toString() } `}>{ anObjectMapped[ 'name' ] }</Link></IonTitle>
+				recipes.map((anObjectMapped: any, index: any) => {
+					return <React.Fragment key={index}> {
+						<IonItem lines="none">
+							<IonCard className="recipe__img">
+								<IonImg className="image" src={anObjectMapped['img']}></IonImg>
+								<IonTitle className="recipe__link"><Link to={`recipes/${anObjectMapped['_id'].toString()} `}>{anObjectMapped['name']}</Link></IonTitle>
 								<IonText className="recipe__text">
 									<p className="recipe__text">
-										{ anObjectMapped[ 'short' ] }
+										{anObjectMapped['short']}
 									</p>
 								</IonText>
-						</IonCard>
-					</IonItem>
-				} </React.Fragment>
-			})
-		} </IonList>
+							</IonCard>
+						</IonItem>
+					} </React.Fragment>
+				})
+			}
+			<IonButton className="list__button" onClick={clearFilter}>Alle recepten</IonButton>
+		</IonList>
 	} </>
 }

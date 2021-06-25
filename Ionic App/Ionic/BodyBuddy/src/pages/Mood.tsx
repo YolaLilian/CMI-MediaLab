@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle, withIonLifeCycle, IonText } from "@ionic/react";
+import { IonButton, IonContent, IonImg, IonPage, IonHeader, IonToolbar, IonTitle, withIonLifeCycle, IonText } from "@ionic/react";
 
 import { useHistory } from 'react-router-dom'; 
 
 import UIContext from "../MyContext";
 
 import { logOut } from "../functions";
+import './Mood.css';
 
 const Mood: React.FC = () => {
 
@@ -31,17 +32,18 @@ const Mood: React.FC = () => {
 
 	return(
 		<IonPage>
-			<IonHeader>
+			{/* <IonHeader>
 				<IonToolbar color="quinary">
 					<IonTitle className="header__title">
 						Mood
 					</IonTitle>
 				</IonToolbar>
-			</IonHeader>
+			</IonHeader> */}
 			<IonContent>
-				<IonText>
+				{/* <IonText>
 					<p>Hier komt informatie over je gemoedstoestand te staan, inclusief dagelijks inspirerende quotes!</p>
-				</IonText>
+				</IonText> */}
+				<IonImg className="mood__img" src="../../assets/images/background/mood_lang.png" />
 			<IonButton id="logout_button" onClick={ logout } >Log uit</IonButton>				
 			</IonContent>
 		</IonPage>
