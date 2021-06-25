@@ -10,13 +10,13 @@ import {
 	IonImg,
 	IonFab,
 	IonFabButton,
-	IonFabList,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { restaurant, home, person, heart, barbell } from 'ionicons/icons';
+import { restaurant, home, happy, barbell } from 'ionicons/icons';
 
 import { ProtectedRoute } from './components/ProtectedRoute';
 
+import Home from './pages/Home';
 import Recipes from './pages/Recipes';
 import { Recipe } from './pages/Recipe';
 import Workouts from './pages/Workouts';
@@ -24,7 +24,6 @@ import User from './pages/Profile';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Mood from './pages/Mood';
-import Coach from './pages/Coach';
 
 import UIContext from "./MyContext";
 
@@ -71,12 +70,12 @@ export default function App() {
 						<Route exact path="/login">
 							<Login />
 						</Route>
-						<ProtectedRoute exact path="/mood" component={Mood}/>
+						<ProtectedRoute exact path="/home" component={Home} />
+						<ProtectedRoute exact path="/mood" component={Mood} />
 						<ProtectedRoute exact path="/recipes" component= {Recipes} />
 						<ProtectedRoute exact path="/recipes/:recipeId" component={Recipe} />
 						<ProtectedRoute exact path="/workouts" component={Workouts} />
 						<ProtectedRoute exact path="/user" component={User} />
-						<ProtectedRoute exact path="/coach" component={Coach} />
 					</IonRouterOutlet>
 					<IonTabBar color="primary" slot="bottom" style={tabbarStyle}>
 						<IonTabButton tab="recipes" href="/recipes">
@@ -85,11 +84,10 @@ export default function App() {
 						<IonTabButton tab="workouts" href="/workouts">
 							<IonIcon icon={barbell} />
 						</IonTabButton>
-						<IonTabButton tab="mood" href="/mood">
-							{/* <IonIcon icon={home} /> */}
+						<IonTabButton tab="forMe" href="/home">
 						</IonTabButton>
-						<IonTabButton tab="coach" href="/coach">
-							<IonIcon icon={person} />
+						<IonTabButton tab="mood" href="/mood">
+							<IonIcon icon={happy} />
 						</IonTabButton>
 						<IonTabButton tab="user" href="/user">
 							{/* <IonIcon icon={heart} /> */}
@@ -98,7 +96,7 @@ export default function App() {
 					</IonTabBar>
 				</IonTabs>
 				<IonFab className="fab" vertical="bottom" slot="fixed" style={tabbarStyle}>
-					<IonFabButton href="/mood">
+					<IonFabButton href="/home">
 					<IonIcon className="profile__icon" icon={home} />
 					</IonFabButton>
 				</IonFab>

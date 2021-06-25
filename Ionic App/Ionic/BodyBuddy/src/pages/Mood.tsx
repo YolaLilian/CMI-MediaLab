@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle, IonGrid, IonRow, IonCol,  withIonLifeCycle } from "@ionic/react";
+import { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle, withIonLifeCycle, IonText } from "@ionic/react";
 
 import { useHistory } from 'react-router-dom'; 
 
@@ -14,6 +14,7 @@ const Mood: React.FC = () => {
 	async function logout() {
 		
 		const res = await logOut();
+		console.log(res)
 		history.push("/login");
 		
 	}
@@ -38,6 +39,9 @@ const Mood: React.FC = () => {
 				</IonToolbar>
 			</IonHeader>
 			<IonContent>
+				<IonText>
+					<p>Hier komt informatie over je gemoedstoestand te staan, inclusief dagelijks inspirerende quotes!</p>
+				</IonText>
 			<IonButton id="logout_button" onClick={ logout } >Log uit</IonButton>				
 			</IonContent>
 		</IonPage>

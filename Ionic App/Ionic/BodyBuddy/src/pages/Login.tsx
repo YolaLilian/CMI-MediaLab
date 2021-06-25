@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IonPage, IonContent, IonInput, IonButton, IonLabel, IonList, IonItem, IonImg, withIonLifeCycle } from '@ionic/react';
+import { IonPage, IonContent, IonInput, IonButton, IonList, IonItem, IonImg, withIonLifeCycle } from '@ionic/react';
 
 import { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom'; 
@@ -25,15 +25,15 @@ const Login: React.FC = () => {
 			toast('Login mislukt... Controleer uw gegevens');
 		} else {
 			toast("U bent succesvol ingelogd!");
-			history.push( "/mood" )
+			history.push( "/home" )
 		};
 		
-		// const res = await checkLoginStatus();
 	}
 	
 	async function logout() {
 		
 		const res = await logOut();
+		console.log(res)
 		
 	}
 

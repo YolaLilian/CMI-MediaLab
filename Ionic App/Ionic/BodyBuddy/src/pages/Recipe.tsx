@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import RecipeDataService from "../services/recipe"; 
 
 import { RecipeDetails } from '../components/RecipeDetails';
-import { RecipeList } from '../components/RecipeList';
 
 
 export const Recipe = (props: any) => {
