@@ -3,7 +3,17 @@
     margin-left: 7%;
     float: left;
     margin-right: 7%;
-	border-radius: 50px;
+
+}
+
+.profielfoto_db { 
+
+	width: 32%;
+    margin-left: 7%;
+    float: left;
+    margin-right: 7%;
+	border-radius: 60px !important;
+	overflow: hidden;
 
 }
 

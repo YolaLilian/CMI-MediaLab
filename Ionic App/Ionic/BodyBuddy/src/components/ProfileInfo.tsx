@@ -123,7 +123,7 @@ export function ProfileInfo( {info}:any ) {
           </IonFabButton>
         </IonFab>
         <h1 className="profiel__header">{info.name}</h1>
-        { info.img ? <IonImg className="profielfoto" src={info.img} /> : <IonImg className="profielfoto" src="../../assets/images/background/Profielfoto.png" /> }
+        { info.img ? <IonImg className="profielfoto_db" src={info.img} /> : <IonImg className="profielfoto" src="../../assets/images/background/Profielfoto.png" /> }
 		{/* <IonImg className="image" src={ info[ 'img' ] }></IonImg> */}
         <p className="sub__head">Leeftijd</p>
         { info.dateOfBirth !== "" ? <p className="input__text">{age} jaar</p> :
