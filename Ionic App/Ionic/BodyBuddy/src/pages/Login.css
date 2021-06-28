@@ -14,21 +14,21 @@
 
 #login__button{
   margin: 0;
-  margin-left: 22%;
+  margin-left: 35%;
   margin-top: 10%;
   padding: 1px;
   width: 28%;
   font-family: Como;
 }
 
-#logout_button{
-  margin: 0;
+/* #logout_button{ */
+  /* margin: 0; */
   /* margin-left: 30%; */
-  margin-top: 10%;
-  padding: 1px;
-  width: 28%;
-  font-family: Como;
-}
+  /* margin-top: 10%; */
+  /* padding: 1px; */
+  /* width: 28%; */
+  /* font-family: Como; */
+/* } */
 
 .background{
     background-color: #faf2ea !important;

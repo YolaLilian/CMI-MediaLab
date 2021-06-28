@@ -64,7 +64,7 @@ const Login: React.FC = () => {
 					</IonItem>
 				</IonList>
 				<IonButton id="login__button" color="medium" onClick={ login }>Log in</IonButton>
-				<IonButton id="logout_button" onClick={ logout }>Log uit</IonButton>
+				{/* <IonButton id="logout_button" onClick={ logout }>Log uit</IonButton> */}
 				<p id="registreren">Nog geen account? <Link to="/register">Maak een account aan!</Link></p>
 			</IonContent>
 		</IonPage>

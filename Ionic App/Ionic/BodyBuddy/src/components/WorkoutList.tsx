@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 import WorkoutDataService from "../services/workout";
 
+import './WorkoutList.css';
+
 // import './WorkoutList.css';
 
 export const WorkoutList = () => {
@@ -18,16 +20,16 @@ export const WorkoutList = () => {
 
 	const loadData = () => {
 		WorkoutDataService.getAll()
-		.then( ( response: { data: { workouts: React.SetStateAction<never[]>; }; } ) => {
-			setData( response.data.workouts );
-		} )
-		.catch ( ( error: any) => {
-			console.log( error );
-		} );
+			.then((response: { data: { workouts: React.SetStateAction<never[]>; }; }) => {
+				setData(response.data.workouts);
+			})
+			.catch((error: any) => {
+				console.log(error);
+			});
 	};
-	
+
 	const workouts = data;
-	
+
 	const find = (query: string, by: string) => {
 
 		WorkoutDataService.find(query, by)
@@ -55,26 +57,27 @@ export const WorkoutList = () => {
 		sessionStorage.clear();
 		findMood();
 	}
-	
+
 	return <> {
-		<IonList> 
-			<IonButton onClick={clearFilter}>Alle Workouts</IonButton>
+		<IonList>
 			{
-			workouts.map((anObjectMapped: any, index: any) => {
-				return <React.Fragment key={index}> {
-					<IonItem lines="none">
-						<IonCard className="workout__img">
-							<IonImg className="image" src={ anObjectMapped[ 'img' ] }></IonImg>
-								<IonTitle className="workout__link"><Link to={ `workouts/${ anObjectMapped['_id'].toString() } `}>{ anObjectMapped[ 'name' ] }</Link></IonTitle>
+				workouts.map((anObjectMapped: any, index: any) => {
+					return <React.Fragment key={index}> {
+						<IonItem lines="none">
+							<IonCard className="workout__img">
+								<IonImg className="image" src={anObjectMapped['img']}></IonImg>
+								<IonTitle className="workout__link"><Link to={`workouts/${anObjectMapped['_id'].toString()} `}>{anObjectMapped['name']}</Link></IonTitle>
 								<IonText className="workout__text">
 									<p className="workout__text">
-										{ anObjectMapped[ 'short' ] }
+										{anObjectMapped['short']}
 									</p>
 								</IonText>
-						</IonCard>
-					</IonItem>
-				} </React.Fragment>
-			})
-		} </IonList>
+							</IonCard>
+						</IonItem>
+					} </React.Fragment>
+				})
+			}
+			<IonButton className="list__button" onClick={clearFilter}>Alle Workouts</IonButton>
+		</IonList>
 	} </>
 }
