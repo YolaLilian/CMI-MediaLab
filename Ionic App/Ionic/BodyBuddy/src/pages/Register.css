@@ -1,0 +1,42 @@
+.reg__body{
+  background-color: #faf2ea !important;
+}
+
+.regscreen__char{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 7%;
+    padding-bottom: 7%;
+  }
+
+  #registreer{
+    font-family: Como;
+    color:#f3a8b3;
+    font-size: small;
+    margin: 0;
+    margin-bottom: 3px;
+    padding-bottom: 15px;
+    padding-left: 27%;
+    margin-top: 5%;
+  }
+ 
+  .input__register{
+    background-color: #f3a8b3 !important;
+    border-radius: 15px;
+  }
+
+  #reg__button{
+    margin: 0;
+    margin-left: 32%;
+    margin-top: 5%;
+    padding: 1px;
+    width: 30%;
+    font-family: Como;
+  }
+
+  .login{
+    margin: 0;
+    font-family: Como;
+    margin-left: 10%;
+    color: #4c408a; 
+  }

@@ -1,0 +1,7 @@
+{
+  "name": "Mynd",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

@@ -1,0 +1,110 @@
+.login__body{
+    /** the basic --ion-background color is white, found in theme/variables.css **/
+    --ion-background-color:#faf2ea;
+}
+
+#login__list{
+  margin: auto;
+  margin-top: 7%;
+  width: 80%;
+  font-size: small;
+  background-color: #ffffff !important;
+  padding: 0;
+}
+
+#login__button{
+  margin: 0;
+  margin-left: 35%;
+  margin-top: 10%;
+  padding: 1px;
+  width: 28%;
+  font-family: Como;
+}
+
+/* #logout_button{ */
+  /* margin: 0; */
+  /* margin-left: 30%; */
+  /* margin-top: 10%; */
+  /* padding: 1px; */
+  /* width: 28%; */
+  /* font-family: Como; */
+/* } */
+
+.background{
+    background-color: #faf2ea !important;
+    /* --background: url(../img/background/clean_background.png) 0 0/100% 100% no-repeat; */
+}
+
+.loginscreen__char{
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 7%;
+  padding-bottom: 7%;
+}
+
+#login{
+  margin: 0;
+  font-family: Como;
+  margin-left: 10%;
+  color: #4c408a; 
+}
+
+#registreren{
+  /* margin-left: 20px; */
+  font-family: Como;
+  color:#f3a8b3;
+  font-size: small;
+  margin: 0;
+  margin-top: 15%;
+  margin-bottom: 3px;
+  padding-bottom: 15px;
+  padding-left: 14%;
+}
+
+#header__tekst{
+  font-family: Como;
+  font-style: bold;
+  color:#f3a8b3;
+  font-size: large;
+  margin-bottom: 3px;
+  margin-left: 20%;
+  padding-bottom: 0;
+  /* padding-left: 17%; */
+}
+
+.input__login {
+  background-color: #f3a8b3 !important;
+  border-radius: 15px;
+  padding: 0 !important;
+}
+
+.label__tekst{
+  font-family: Como !important;
+  color: blue !important;
+  align-items: center !important;
+}
+
+.food__card{
+  /* --background-color: yellow !important; */
+  background-color: #fceed5 !important;
+  border-radius: 20px;
+}
+
+.food__title{
+  color: #f7cc7c !important;
+  padding-bottom: 10px;
+  font-size: medium;
+  margin-left: 20px;
+}
+
+.food__content{
+  color: #f7cc7c !important;
+  padding-bottom: 10px;
+  font-size: small;
+  margin-left: 20px;
+}
+
+.food__header{
+  padding-bottom: 1px;
+  padding-top: 5px;
+}
