@@ -485,7 +485,26 @@ html{
 
 .section__timeline {
 
-	padding-top: 100px;
+	padding-top: 50px;
+
+	.title {
+
+		font-size: 3rem;
+		letter-spacing: 1px;
+
+		background-image: linear-gradient(45deg, $orange, $purple, $blue);
+		background-size: 100%;
+
+		background-clip: text;
+
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		-moz-background-clip: text;
+		-moz-text-fill-color: transparent;
+		
+	}
+
 }
 
 .creative_session {
@@ -612,14 +631,64 @@ html{
 
 .section__devices {
 
-	height: 800px;
+	height: 1000px;
 
-	div {
+	margin-bottom: 200px;
+
+	.container {
 
 		display: flex;
 		justify-content: center;
 		align-items: center;
 
+		div {
+
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+	}
+
+	.title {
+
+		font-size: 3rem;
+		letter-spacing: 1px;
+
+		background-image: linear-gradient(45deg, $orange, $purple, $blue);
+		background-size: 100%;
+
+		background-clip: text;
+
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		-moz-background-clip: text;
+		-moz-text-fill-color: transparent;
+		
+	}
+
+	.subtitle {
+
+		font-size: 1rem;
+		letter-spacing: 1px;
+
+		background-image: linear-gradient(45deg, $orange, $purple, $blue);
+		background-size: 100%;
+
+		background-clip: text;
+
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		-moz-background-clip: text;
+		-moz-text-fill-color: transparent;
+
+	}
+
+	.app {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
 	}
 }
 

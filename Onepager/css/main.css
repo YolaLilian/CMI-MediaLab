@@ -8455,7 +8455,17 @@ html {
     justify-content: space-between; }
 
 .section__timeline {
-  padding-top: 100px; }
+  padding-top: 50px; }
+  .section__timeline .title {
+    font-size: 3rem;
+    letter-spacing: 1px;
+    background-image: linear-gradient(45deg, #f29022, #754f9b, #243885);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent; }
 
 .creative_session {
   display: flex;
@@ -8518,11 +8528,39 @@ html {
     margin-top: 20px; }
 
 .section__devices {
-  height: 800px; }
-  .section__devices div {
+  height: 1000px;
+  margin-bottom: 200px; }
+  .section__devices .container {
     display: flex;
     justify-content: center;
     align-items: center; }
+    .section__devices .container div {
+      padding-left: 20px;
+      padding-right: 20px; }
+  .section__devices .title {
+    font-size: 3rem;
+    letter-spacing: 1px;
+    background-image: linear-gradient(45deg, #f29022, #754f9b, #243885);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent; }
+  .section__devices .subtitle {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    background-image: linear-gradient(45deg, #f29022, #754f9b, #243885);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent; }
+  .section__devices .app {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; }
 
 .footer {
   background-color: #f29022;
