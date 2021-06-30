@@ -69,6 +69,7 @@
   },
   "version": "0.0.4",
   "dependencies": {
-    "braces": "^3.0.2"
+    "braces": "^3.0.2",
+    "bulma-timeline": "^3.0.4"
   }
 }

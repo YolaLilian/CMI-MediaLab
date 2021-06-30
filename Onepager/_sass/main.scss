@@ -28,9 +28,16 @@ $family-secondary: 'Bely-display', sans-serif;
 $primary: $orange;
 $primary-invert: $orange-invert;
 
+$secondary: $purple;
+$secondary-invert: $purple-invert;
+
+$tertiary: $blue;
+$tertiary-invert: $blue-invert;
+
 // 4. Import the rest of Bulma
 
 @import "../node_modules/bulma/bulma";
+@import '../node_modules/bulma-timeline/src/sass/index.sass';
 
 html{
 
@@ -476,190 +483,34 @@ html{
 
 }
 
-.section__research {
+.section__timeline {
 
-	max-width: 1100px;
-	margin-left: auto;
-	margin-right: auto;
+	padding-top: 100px;
+}
 
-	span {
+.creative_session {
 
-		font-weight: 700;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 
-	}
+	&__image-thumbnail {
 
-	.title {
-
-		font-size: 3rem;
-		margin-top: 70px;
-
-		&--research {
-
-			font-size: 1.5rem;
-			margin-right: auto;
-			margin-top: 0;
-			margin-right: 20px;
-			margin-bottom: 0;
-
-			border-right: 2px $orange;
-
-		}
+		margin-top: 20px;
 
 	}
 
-	.research__content {
+	.image_container {
 
-		display: flex;
-		justify-content: space-between;
-		flex-direction: column;
+		cursor: pointer;
 
-		&--table {
+		img {
 
-			display: flex;
-			margin-bottom: 70px;
-			margin-top: 70px;
-
-		}
-
-	}
-
-	.research__subject {
-
-		display: flex;
-		flex-direction: column;
-
-		&--title {
-
-			align-self: flex-start;
-			flex-direction: row;
-			display: flex;
-
-		}
-	}
-	
-	.download_icon {
-
-		width: 28px;
-
-		&--two {
-
-			margin-right: 5px;
-
-		}
-
-	}
-
-	.creative_session {
-
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-
-		&__image-thumbnail {
-
-			margin-top: 20px;
-
-		}
-
-		.image_container {
-
-			cursor: pointer;
-
-			img {
-
-				height: 150px;
-				object-fit: cover;
-				width: 200px;
-
-			}
-
-		}
-
-	}
-
-	.modal-subtext {
-
-		color: $orange-invert;
-		display: flex;
-		justify-content: center;
-		text-align: center;
-		padding-top: 10px;
-	}
-
-	.deskresearch {
-	
-		&__summary {
-
-			display: flex;
-			justify-content: space-between;
-			margin-top: 10px;
-
-
-			img {
-
-				width: 300px;
-
-				margin-top: 10px;
-
-			}
-
-			.title {
-
-				margin-top: 0px;
-
-			}
-
-		}
-
-		&--average, &--restaurants, &--current-apps {
-
-			flex: 1 1 0px;
-
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			text-align: center;
-
-		}
-
-		&--average {
-
-			.title {
-
-				font-size: 2rem;
-
-			}
-
-		}
-		
-		&--current-apps {
-
-
-			.title {
-
-				height: 50px;
-				font-size: 1.7rem;
-
-			}
-
-		}
-
-	}
-
-	.quotes {
-
-		&__columns {
-
-			margin-top: 20px;
-
-		}
-
-		&__column {
-
-			text-align: center;
-			margin-right: 10px;
+			height: 75px;
+			object-fit: cover;
+			width: 100px;
 			margin-left: 10px;
+			margin-right: 10px;
 
 		}
 
@@ -667,79 +518,30 @@ html{
 
 }
 
-.section__process {
+.download_icon {
 
-	background-color: $blue;
-	color: $blue-invert;
-	padding-bottom: 128px;
+	width: 28px;
 
-	.title {
+	&--two {
 
-		font-size: 3rem;
-		color: $blue-invert;
-		background-image: none;
-		-moz-text-fill-color: currentcolor;
-		-webkit-text-fill-color: currentcolor;
-		letter-spacing: 1px;
-		
-	}
-
-	.process__container {
-
-		max-width: 1100px;
-		margin-left: auto;
-		margin-right: auto;
+		margin-right: 5px;
 
 	}
 
-	.level {
+}
 
-		align-items: center;
-		justify-content: space-between;
-		display: flex;
+.github__link {
 
-		&--multi {
+	width: 75px;
+}
 
-			flex-direction: column;
+.modal-subtext {
 
-		}
-
-	}
-
-	.level-item {
-
-		align-items: center;
-		display: flex;
-		flex-basis: auto;
-		flex-grow: 0;
-		flex-shrink: 0;
-		justify-content: center;
-
-		a {
-
-			text-decoration: underline;
-			color: $blue-invert;
-		}
-
-		&.arrows--rotated {
-
-			img {
-
-				transform: scaleX(-1);
-
-			}
-		}
-		
-		img {
-
-			height: 80px;
-
-			margin-left: 10px;
-			margin-right: 10px;
-
-		}
-	}
-
+	color: $orange-invert;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	padding-top: 10px;
 }
 
 .section__concept {
@@ -807,6 +609,20 @@ html{
 
 }
 
+
+.section__devices {
+
+	height: 800px;
+
+	div {
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+	}
+}
+
 .footer {
 
 	background-color: $orange;
@@ -818,19 +634,15 @@ html{
 
 	}
 
-	// img {
+	.img__github {
 
-		.img__github {
+		width: 90px;
+	
+	}
 
-			width: 90px;
-		
-		}
+	.img__bulma {
 
-		.img__bulma {
-
-			width: 240px;
-		}
-
-	// }
+		width: 240px;
+	}
 
 }
