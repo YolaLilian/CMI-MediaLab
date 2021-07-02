@@ -28,9 +28,16 @@ $family-secondary: 'Bely-display', sans-serif;
 $primary: $orange;
 $primary-invert: $orange-invert;
 
+$secondary: $purple;
+$secondary-invert: $purple-invert;
+
+$tertiary: $blue;
+$tertiary-invert: $blue-invert;
+
 // 4. Import the rest of Bulma
 
 @import "../node_modules/bulma/bulma";
+@import '../node_modules/bulma-timeline/src/sass/index.sass';
 
 html{
 
@@ -204,9 +211,28 @@ html{
 
 }
 
-.section__team {
+.section__period {
 
-	margin-top: 50px;
+	.title__wrapper {
+
+		display: flex;
+		justify-content: center;
+
+		margin-top: 70px;
+		margin-bottom: 70px;
+		margin-bottom: 0;
+
+	}
+
+	.title {
+
+		font-size: 3rem;
+
+	}
+
+}
+
+.section__team {
 
 	.team__people {
 
@@ -219,14 +245,14 @@ html{
 		display: flex;
 		justify-content: center;
 
-		margin-top: 70px;
+		margin-top: 0;
 		margin-bottom: 70px;
 
 	}
 
 	.title {
 
-		font-size: 3rem;
+		font-size: 2.5rem;
 
 	}
 
@@ -347,19 +373,19 @@ html{
 
 		}
 
-		#creative {
+		.creative {
 
 			color: $orange;
 
 		}
 
-		#innovative {
+		.innovative {
 
 			color: $purple;
 
 		}
 
-		#positive {
+		.positive {
 
 			color: $blue;
 		}
@@ -378,9 +404,9 @@ html{
 
 }
 
-.hero__assignment {
+.hero__assignment, 
+.hero__solution {
 
-	background-color: $purple;
 	color: $purple-invert;
 	height: 100vh;
 
@@ -390,7 +416,7 @@ html{
 
 	.title {		
 		
-		font-size: 3rem;
+		font-size: 2.5rem;
 		color: $orange-invert;
 		letter-spacing: 1px;
 		background-image: none;
@@ -476,190 +502,64 @@ html{
 
 }
 
-.section__research {
+.hero__assignment {
 
-	max-width: 1100px;
-	margin-left: auto;
-	margin-right: auto;
+	background-color: $purple;
 
-	span {
+}
 
-		font-weight: 700;
+.hero__solution {
 
-	}
+	background-color: $blue;
+
+}
+.section__timeline {
+
+	padding-top: 50px;
 
 	.title {
 
 		font-size: 3rem;
-		margin-top: 70px;
+		letter-spacing: 1px;
 
-		&--research {
+		background-image: linear-gradient(45deg, $orange, $purple, $blue);
+		background-size: 100%;
 
-			font-size: 1.5rem;
-			margin-right: auto;
-			margin-top: 0;
-			margin-right: 20px;
-			margin-bottom: 0;
+		background-clip: text;
 
-			border-right: 2px $orange;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 
-		}
-
-	}
-
-	.research__content {
-
-		display: flex;
-		justify-content: space-between;
-		flex-direction: column;
-
-		&--table {
-
-			display: flex;
-			margin-bottom: 70px;
-			margin-top: 70px;
-
-		}
-
-	}
-
-	.research__subject {
-
-		display: flex;
-		flex-direction: column;
-
-		&--title {
-
-			align-self: flex-start;
-			flex-direction: row;
-			display: flex;
-
-		}
-	}
-	
-	.download_icon {
-
-		width: 28px;
-
-		&--two {
-
-			margin-right: 5px;
-
-		}
-
-	}
-
-	.creative_session {
-
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-
-		&__image-thumbnail {
-
-			margin-top: 20px;
-
-		}
-
-		.image_container {
-
-			cursor: pointer;
-
-			img {
-
-				height: 150px;
-				object-fit: cover;
-				width: 200px;
-
-			}
-
-		}
-
-	}
-
-	.modal-subtext {
-
-		color: $orange-invert;
-		display: flex;
-		justify-content: center;
-		text-align: center;
-		padding-top: 10px;
-	}
-
-	.deskresearch {
-	
-		&__summary {
-
-			display: flex;
-			justify-content: space-between;
-			margin-top: 10px;
-
-
-			img {
-
-				width: 300px;
-
-				margin-top: 10px;
-
-			}
-
-			.title {
-
-				margin-top: 0px;
-
-			}
-
-		}
-
-		&--average, &--restaurants, &--current-apps {
-
-			flex: 1 1 0px;
-
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			text-align: center;
-
-		}
-
-		&--average {
-
-			.title {
-
-				font-size: 2rem;
-
-			}
-
-		}
+		-moz-background-clip: text;
+		-moz-text-fill-color: transparent;
 		
-		&--current-apps {
+	}
 
+}
 
-			.title {
+.creative_session {
 
-				height: 50px;
-				font-size: 1.7rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 
-			}
+	&__image-thumbnail {
 
-		}
+		margin-top: 20px;
 
 	}
 
-	.quotes {
+	.image_container {
 
-		&__columns {
+		cursor: pointer;
 
-			margin-top: 20px;
+		img {
 
-		}
-
-		&__column {
-
-			text-align: center;
-			margin-right: 10px;
+			height: 75px;
+			object-fit: cover;
+			width: 100px;
 			margin-left: 10px;
+			margin-right: 10px;
 
 		}
 
@@ -667,79 +567,30 @@ html{
 
 }
 
-.section__process {
+.download_icon {
 
-	background-color: $blue;
-	color: $blue-invert;
-	padding-bottom: 128px;
+	width: 28px;
 
-	.title {
+	&--two {
 
-		font-size: 3rem;
-		color: $blue-invert;
-		background-image: none;
-		-moz-text-fill-color: currentcolor;
-		-webkit-text-fill-color: currentcolor;
-		letter-spacing: 1px;
-		
-	}
-
-	.process__container {
-
-		max-width: 1100px;
-		margin-left: auto;
-		margin-right: auto;
+		margin-right: 5px;
 
 	}
 
-	.level {
+}
 
-		align-items: center;
-		justify-content: space-between;
-		display: flex;
+.github__link {
 
-		&--multi {
+	width: 75px;
+}
 
-			flex-direction: column;
+.modal-subtext {
 
-		}
-
-	}
-
-	.level-item {
-
-		align-items: center;
-		display: flex;
-		flex-basis: auto;
-		flex-grow: 0;
-		flex-shrink: 0;
-		justify-content: center;
-
-		a {
-
-			text-decoration: underline;
-			color: $blue-invert;
-		}
-
-		&.arrows--rotated {
-
-			img {
-
-				transform: scaleX(-1);
-
-			}
-		}
-		
-		img {
-
-			height: 80px;
-
-			margin-left: 10px;
-			margin-right: 10px;
-
-		}
-	}
-
+	color: $orange-invert;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	padding-top: 10px;
 }
 
 .section__concept {
@@ -759,7 +610,7 @@ html{
 
 	.title {
 
-		font-size: 3rem;
+		font-size: 2.5rem;
 
 		&--orange {
 
@@ -807,6 +658,70 @@ html{
 
 }
 
+
+.section__devices {
+
+	height: 1000px;
+
+	margin-bottom: 200px;
+
+	.container {
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		div {
+
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+	}
+
+	.title {
+
+		font-size: 2.5rem;
+		letter-spacing: 1px;
+
+		background-image: linear-gradient(45deg, $orange, $purple, $blue);
+		background-size: 100%;
+
+		background-clip: text;
+
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		-moz-background-clip: text;
+		-moz-text-fill-color: transparent;
+		
+	}
+
+	.subtitle {
+
+		font-size: 1rem;
+		letter-spacing: 1px;
+
+		background-image: linear-gradient(45deg, $orange, $purple, $blue);
+		background-size: 100%;
+
+		background-clip: text;
+
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		-moz-background-clip: text;
+		-moz-text-fill-color: transparent;
+
+	}
+
+	.app {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+	}
+}
+
 .footer {
 
 	background-color: $orange;
@@ -818,10 +733,15 @@ html{
 
 	}
 
-	img {
+	.img__github {
 
-		width: 60px;
+		width: 90px;
+	
+	}
 
+	.img__bulma {
+
+		width: 240px;
 	}
 
 }
