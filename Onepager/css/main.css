@@ -8318,17 +8318,27 @@ html {
       .hero .column {
         margin-left: 60px; } }
 
-.section__team {
-  margin-top: 50px; }
-  .section__team .team__people {
-    margin-bottom: 50px; }
-  .section__team .title__wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 70px;
-    margin-bottom: 70px; }
-  .section__team .title {
-    font-size: 3rem; }
+.section__period .title__wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  margin-bottom: 0; }
+
+.section__period .title {
+  font-size: 3rem; }
+
+.section__team .team__people {
+  margin-bottom: 50px; }
+
+.section__team .title__wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 70px; }
+
+.section__team .title {
+  font-size: 2.5rem; }
 
 .team__people {
   display: flex;
@@ -8389,11 +8399,11 @@ html {
   max-width: 400px; }
   .team__crinpo .crinpo__trait .crinpo__subtitle {
     font-size: 1.6rem; }
-  .team__crinpo .crinpo__trait #creative {
+  .team__crinpo .crinpo__trait .creative {
     color: #f29022; }
-  .team__crinpo .crinpo__trait #innovative {
+  .team__crinpo .crinpo__trait .innovative {
     color: #754f9b; }
-  .team__crinpo .crinpo__trait #positive {
+  .team__crinpo .crinpo__trait .positive {
     color: #243885; }
 
 .team__crinpo .crinpo__img {
@@ -8403,56 +8413,73 @@ html {
   margin-bottom: 120px;
   display: block; }
 
-.hero__assignment {
-  background-color: #754f9b;
+.hero__assignment,
+.hero__solution {
   color: #ffffff;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center; }
-  .hero__assignment .title {
-    font-size: 3rem;
+  .hero__assignment .title,
+  .hero__solution .title {
+    font-size: 2.5rem;
     color: #ffffff;
     letter-spacing: 1px;
     background-image: none;
     -moz-text-fill-color: currentcolor;
     -webkit-text-fill-color: currentcolor; }
-  .hero__assignment .title__wrapper {
+  .hero__assignment .title__wrapper,
+  .hero__solution .title__wrapper {
     margin-top: 0; }
-  .hero__assignment .assignment__wrapper {
+  .hero__assignment .assignment__wrapper,
+  .hero__solution .assignment__wrapper {
     display: flex;
     justify-content: center; }
-  .hero__assignment .assignment__content {
+  .hero__assignment .assignment__content,
+  .hero__solution .assignment__content {
     max-width: 700px;
     font-size: 2rem;
     margin-bottom: 70px;
     text-align: center; }
-  .hero__assignment .client__wrapper {
+  .hero__assignment .client__wrapper,
+  .hero__solution .client__wrapper {
     display: flex;
     align-items: center;
     flex-direction: column; }
-  .hero__assignment .title__client {
+  .hero__assignment .title__client,
+  .hero__solution .title__client {
     font-size: 2rem;
     letter-spacing: 1px;
     margin-bottom: 40px;
     margin-top: 0; }
-  .hero__assignment .client__content {
+  .hero__assignment .client__content,
+  .hero__solution .client__content {
     width: 700px;
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: center; }
-    .hero__assignment .client__content span {
+    .hero__assignment .client__content span,
+    .hero__solution .client__content span {
       font-weight: 700; }
-  .hero__assignment .client__summary {
+  .hero__assignment .client__summary,
+  .hero__solution .client__summary {
     display: flex;
     flex-direction: column;
     align-items: center; }
-    .hero__assignment .client__summary span {
+    .hero__assignment .client__summary span,
+    .hero__solution .client__summary span {
       font-weight: 700; }
-  .hero__assignment .stakeholders {
+  .hero__assignment .stakeholders,
+  .hero__solution .stakeholders {
     display: flex;
     width: 900px;
     justify-content: space-between; }
+
+.hero__assignment {
+  background-color: #754f9b; }
+
+.hero__solution {
+  background-color: #243885; }
 
 .section__timeline {
   padding-top: 50px; }
@@ -8506,7 +8533,7 @@ html {
   .section__concept span {
     font-weight: 700; }
   .section__concept .title {
-    font-size: 3rem; }
+    font-size: 2.5rem; }
     .section__concept .title--orange {
       color: #f29022;
       font-size: 1.5rem; }
@@ -8538,7 +8565,7 @@ html {
       padding-left: 20px;
       padding-right: 20px; }
   .section__devices .title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     letter-spacing: 1px;
     background-image: linear-gradient(45deg, #f29022, #754f9b, #243885);
     background-size: 100%;
